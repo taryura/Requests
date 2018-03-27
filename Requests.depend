@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1521828725 source:d:\c++ projects\Новая папка\requests\main.cpp
+1521829720 source:d:\c++ projects\Новая папка\requests\main.cpp
 	"wx_pch.h"
 	"Main.h"
 	"wxGUI2.h"
@@ -1690,7 +1690,7 @@
 1493488838 d:\wxwidgets-3.0.3\include\wx\univ\theme.h
 	"wx/string.h"
 
-1521825053 d:\c++ projects\Новая папка\requests\wxgui2.h
+1522067763 d:\c++ projects\Новая папка\requests\wxgui2.h
 	<wx/wx.h>
 	"winsock2.h"
 	"Main.h"
@@ -2932,7 +2932,7 @@
 1493488838 d:\wxwidgets-3.0.3\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1521828933 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
+1522073515 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
 	"wxGUI2.h"
 	"a_requests.h"
 
@@ -11780,23 +11780,24 @@
 	<boost/asio/detail/push_options.hpp>
 	<boost/asio/detail/pop_options.hpp>
 
-1520368799 source:d:\c++ projects\Новая папка\requests\src\events.cpp
+1522067763 source:d:\c++ projects\Новая папка\requests\src\events.cpp
 	"wxGUI2.h"
 
 1520368799 source:d:\c++ projects\Новая папка\requests\src\menues.cpp
 	"wxGUI2.h"
 
-1521828559 source:d:\c++ projects\Новая папка\requests\src\toolbars.cpp
+1522067763 source:d:\c++ projects\Новая папка\requests\src\toolbars.cpp
 	"wxGUI2.h"
 
 1520811998 source:d:\c++ projects\Новая папка\requests\wxgui2.cpp
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1521823872 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1522157998 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
+	"head_type.h"
 
-1521829257 d:\c++ projects\Новая папка\requests\include\a_requests.h
+1522157998 d:\c++ projects\Новая папка\requests\include\a_requests.h
 	<cstring>
 	<string>
 	<iostream>
@@ -11805,4 +11806,30 @@
 	<boost/bind.hpp>
 	<boost/asio.hpp>
 	<boost/asio/ssl.hpp>
+
+1446667740 source:d:\c++ projects\Новая папка\requests\resource.rc
+	"wx/msw/wx.rc"
+
+1493488838 d:\wxwidgets-3.0.3\include\wx\msw\wx.rc
+	<windows.h>
+	"wx/msw/wince/wince.rc"
+	"wx/msw/rcdefs.h"
+
+1493488838 d:\wxwidgets-3.0.3\include\wx\msw\wince\wince.rc
+	<commctrl.h>
+	"wx/msw/wince/resources.h"
+	"wx/msw/wince/smartphone.rc"
+
+1493488838 d:\wxwidgets-3.0.3\include\wx\msw\wince\resources.h
+
+1493488838 d:\wxwidgets-3.0.3\include\wx\msw\wince\smartphone.rc
+	<aygshell.h>
+
+1493488838 d:\wxwidgets-3.0.3\include\wx\msw\rcdefs.h
+
+1522154205 source:d:\c++ projects\Новая папка\requests\src\head_type.cpp
+	"head_type.h"
+
+1522157998 d:\c++ projects\Новая папка\requests\include\head_type.h
+	<iostream>
 

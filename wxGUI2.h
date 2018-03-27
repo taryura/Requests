@@ -33,6 +33,7 @@ class wxGUI2Frame: public wxFrame
 
             //File menu
             idMenuFile_New,
+            idMenuFile_Send,
             idMenuFile_Open,
             idMenuFile_Save,
             idMenuFile_Import_FromFile,
@@ -55,6 +56,7 @@ class wxGUI2Frame: public wxFrame
         //file menu
 
         void OnNew(wxCommandEvent& event);
+        void OnSend(wxCommandEvent &event);
         void OnOpen(wxCommandEvent& event);
         void OnSave(wxCommandEvent& event);
         void OnImpFromFile(wxCommandEvent& event);

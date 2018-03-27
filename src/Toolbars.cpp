@@ -15,6 +15,7 @@ void wxGUI2Frame::CreateToolbars()
     wxBitmap newb(wxT("new.png"), wxBITMAP_TYPE_PNG);
     wxBitmap open(wxT("open.png"), wxBITMAP_TYPE_PNG);
     wxBitmap save(wxT("save.png"), wxBITMAP_TYPE_PNG);
+    wxBitmap send(wxT("send.png"), wxBITMAP_TYPE_PNG);
 
     wxPanel *panel = new wxPanel(this, -1);
 
@@ -23,8 +24,9 @@ void wxGUI2Frame::CreateToolbars()
     toolbar1 = new wxToolBar(panel, wxID_ANY, wxDefaultPosition,
 		wxDefaultSize, wxBORDER_NONE|wxTB_FLAT|wxTB_TEXT);
     toolbar1->AddTool(idMenuFile_New, wxT("New"), newb);
+    toolbar1->AddTool(idMenuFile_Send, wxT("Send"), send);
     toolbar1->AddTool(idMenuFile_Open, wxT("Open"), open);
-    toolbar1->AddTool(idMenuFile_Save, wxT(""), save);
+    toolbar1->AddTool(idMenuFile_Save, wxT("Save"), save);
     toolbar1->AddTool(wxID_EXIT, wxT("Exit application"), exit);
     toolbar1->Realize();
 

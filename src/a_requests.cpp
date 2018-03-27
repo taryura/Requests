@@ -1,4 +1,5 @@
 #include "a_requests.h"
+#include "head_type.h"
 
 client::client(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
@@ -36,6 +37,7 @@ client::client(boost::asio::io_service& io_service,
     }
     else
     {
+      reply2 = ("Connect failed: " + error.message());
       std::cout << "Connect failed: " << error.message() << "\n";
     }
   }
@@ -57,6 +59,7 @@ client::client(boost::asio::io_service& io_service,
     }
     else
     {
+      reply2 = ("Handshake failed: " + error.message());
       std::cout << "Handshake failed: " << error.message() << "\n";
     }
   }
@@ -66,35 +69,79 @@ client::client(boost::asio::io_service& io_service,
   {
     if (!error)
     {
-
+      //reading header
       boost::asio::async_read_until(socket_,
-          MyBuffer, 'H',
+          MyBuffer, "\r\n\r\n",
           boost::bind(&client::handle_read, this,
             boost::asio::placeholders::error,
             boost::asio::placeholders::bytes_transferred));
     }
     else
     {
+      reply2 = ("Write failed: " + error.message());
       std::cout << "Write failed: " << error.message() << "\n";
     }
   }
 
-  void client::handle_read(const boost::system::error_code& error,
+void client::handle_read(const boost::system::error_code& error,
       size_t bytes_transferred)
   {
     if (!error)
     {
-
-      std::ostringstream BufOutStream;
-      BufOutStream << &MyBuffer;
-      reply2 = BufOutStream.str();
+      header = buff_to_string(MyBuffer);
+      head_type parsed_header (header);
+      //reading till EOF if content length is determined.
+      std::string string1 = parsed_header.find_str("Content-Length");
+      if (!parsed_header.err){
+        std::string value1 = parsed_header.find_val(string1);
+        int length = atoi(value1.c_str());
+          boost::asio::async_read(socket_, MyBuffer,
+          boost::asio::transfer_at_least(length),
+          boost::bind(&client::handle_read_content, this,
+            boost::asio::placeholders::error));
+      }
+      else {
+        //reading till EOF if chunked.
+        string1 = parsed_header.find_str("Transfer-Encoding");
+        if (!parsed_header.err){
+          boost::asio::async_read_until(socket_,
+            MyBuffer, "\r\n0\r\n",
+            boost::bind(&client::handle_read_content, this,
+            boost::asio::placeholders::error));
+        }
+      reply2 = ("Read of the body failed: the length is undetermined. Please try to resend the request.");
+      }
 
     }
     else
     {
+      reply2 = ("Read failed: " + error.message());
       std::cout << "Read failed: " << error.message() << "\n";
     }
   }
+
+
+void client::handle_read_content(const boost::system::error_code& error)
+  {
+    if (!error)
+    {
+      reply2 = header + buff_to_string(MyBuffer);
+    }
+    else
+    {
+      reply2 = ("Read2 failed: " + error.message());
+      std::cout << "Read failed: " << error.message() << "\n";
+    }
+
+
+  }
+
+std::string client::buff_to_string (boost::asio::streambuf &MyBuffer)
+{
+      std::ostringstream BufOutStream;
+      BufOutStream << &MyBuffer;
+      return BufOutStream.str();
+}
 
 
 void sslrequest::rqst_set (std::string addr,std::string prt,std::string &req_text){
@@ -119,10 +166,30 @@ void sslrequest::rqst_set (std::string addr,std::string prt,std::string &req_tex
   }
   catch (std::exception& e)
   {
+    replyreceived = "Exception: Could not establish connection. Please try again later";
     std::cerr << "Exception: Could not establish connection. Please try again later" << "\n";
 
   }
 
 }
+
+void sslrequest::rqst_set (std::string addr, std::string &req_text){
+            requesttosend = req_text;
+            address1 = addr;
+
+            boost::asio::ip::tcp::iostream stream;
+
+    //stream.expires_from_now(boost::posix_time::seconds(60));
+    stream.connect(address1, "http");
+    stream << requesttosend;
+    stream << "Connection: close\r\n\r\n";
+    stream.flush();
+    std::stringstream request_2;
+    request_2 << stream.rdbuf();
+    replyreceived = request_2.str();
+
+}
+
+
 
 

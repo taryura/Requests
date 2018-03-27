@@ -16,6 +16,7 @@ BEGIN_EVENT_TABLE(wxGUI2Frame, wxFrame)
 
     EVT_MENU(idMenuFile_New, wxGUI2Frame::OnNew)
     EVT_MENU(idMenuFile_Open, wxGUI2Frame::OnOpen)
+    EVT_MENU(idMenuFile_Send, wxGUI2Frame::OnSend)
     EVT_MENU(idMenuFile_Save, wxGUI2Frame::OnSave)
     //import sub menu
     EVT_MENU(idMenuFile_Import_FromFile, wxGUI2Frame::OnImpFromFile)

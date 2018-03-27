@@ -59,9 +59,11 @@
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="D:/wxWidgets-3.0.3/include" />
-			<Add directory="../Win Yandex Translate" />
+			<Add directory="../Requests" />
 			<Add directory="../../../boost_66_installed/include/boost-1_66" />
 			<Add directory="../../../openssl-1.0.2n_7.2.0/include" />
+			<Add directory="include" />
+			<Add directory="src" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="D:/wxWidgets-3.0.3/include" />
@@ -78,10 +80,15 @@
 		<Unit filename="Main.cpp" />
 		<Unit filename="Main.h" />
 		<Unit filename="include/a_requests.h" />
+		<Unit filename="include/head_type.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="src/Toolbars.cpp" />
 		<Unit filename="src/a_requests.cpp" />
 		<Unit filename="src/event_handlers.cpp" />
 		<Unit filename="src/events.cpp" />
+		<Unit filename="src/head_type.cpp" />
 		<Unit filename="src/menues.cpp" />
 		<Unit filename="wxGUI2.cpp" />
 		<Unit filename="wxGUI2.h" />
