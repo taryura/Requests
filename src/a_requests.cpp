@@ -95,10 +95,18 @@ void client::handle_read(const boost::system::error_code& error,
       if (!parsed_header.err){
         std::string value1 = parsed_header.find_val(string1);
         int length = atoi(value1.c_str());
+        //checking if everything has been already transfered
+        if ((bytes_transferred + length) > header.length()){
+          //if not reading till EOF
           boost::asio::async_read(socket_, MyBuffer,
           boost::asio::transfer_at_least(length),
           boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
+        }
+        else {
+            reply2 = header;
+            return;
+        }
       }
       else {
         //reading till EOF if chunked.
@@ -129,7 +137,7 @@ void client::handle_read_content(const boost::system::error_code& error)
     }
     else
     {
-      reply2 = ("Read2 failed: " + error.message());
+      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + header);
       std::cout << "Read failed: " << error.message() << "\n";
     }
 
@@ -144,51 +152,6 @@ std::string client::buff_to_string (boost::asio::streambuf &MyBuffer)
 }
 
 
-void sslrequest::rqst_set (std::string addr,std::string prt,std::string &req_text){
-            requesttosend = req_text;
-            address1 = addr;
-            port1 = prt;
-  try
-  {
-    boost::asio::io_service io_service;
-
-    boost::asio::ip::tcp::resolver resolver(io_service);
-    boost::asio::ip::tcp::resolver::query query(address1, port1);
-    boost::asio::ip::tcp::resolver::iterator iterator = resolver.resolve(query);
-
-    boost::asio::ssl::context ctx(boost::asio::ssl::context::sslv23);
-
-    client c(io_service, ctx, iterator, requesttosend);
-
-    io_service.run();
-
-    replyreceived = c.reply2;
-  }
-  catch (std::exception& e)
-  {
-    replyreceived = "Exception: Could not establish connection. Please try again later";
-    std::cerr << "Exception: Could not establish connection. Please try again later" << "\n";
-
-  }
-
-}
-
-void sslrequest::rqst_set (std::string addr, std::string &req_text){
-            requesttosend = req_text;
-            address1 = addr;
-
-            boost::asio::ip::tcp::iostream stream;
-
-    //stream.expires_from_now(boost::posix_time::seconds(60));
-    stream.connect(address1, "http");
-    stream << requesttosend;
-    stream << "Connection: close\r\n\r\n";
-    stream.flush();
-    std::stringstream request_2;
-    request_2 << stream.rdbuf();
-    replyreceived = request_2.str();
-
-}
 
 
 

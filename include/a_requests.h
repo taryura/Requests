@@ -11,13 +11,6 @@
 #include <boost/asio/ssl.hpp>
 
 
-class sslrequest{
-public:
-    std::string requesttosend, address1, port1, replyreceived;
-    void rqst_set (std::string addr,std::string prt,std::string &req_text);
-    void rqst_set (std::string addr, std::string &req_text);
-};
-
 class client{
 private:
   boost::asio::ssl::stream<boost::asio::ip::tcp::socket> socket_;

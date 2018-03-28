@@ -2932,9 +2932,10 @@
 1493488838 d:\wxwidgets-3.0.3\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1522073515 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
+1522242149 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
 	"wxGUI2.h"
-	"a_requests.h"
+	"sslrequest.h"
+	"httprequest.h"
 
 1520899346 d:\c++ projects\Новая папка\win yandex translate\wxgui2.h
 	<wx/wx.h>
@@ -11793,11 +11794,11 @@
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1522157998 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1522242148 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
 	"head_type.h"
 
-1522157998 d:\c++ projects\Новая папка\requests\include\a_requests.h
+1522242148 d:\c++ projects\Новая папка\requests\include\a_requests.h
 	<cstring>
 	<string>
 	<iostream>
@@ -11832,4 +11833,13 @@
 
 1522157998 d:\c++ projects\Новая папка\requests\include\head_type.h
 	<iostream>
+
+1522242148 d:\c++ projects\Новая папка\requests\include\httprequest.h
+	"a_requests.h"
+
+1522242148 d:\c++ projects\Новая папка\requests\include\sslrequest.h
+	"a_requests.h"
+
+1522241938 source:d:\c++ projects\Новая папка\requests\src\httprequest.cpp
+	"httprequest.h"
 

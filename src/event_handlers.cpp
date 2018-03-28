@@ -9,7 +9,8 @@
 
 
 #include "wxGUI2.h"
-#include "a_requests.h"
+#include "sslrequest.h"
+#include "httprequest.h"
 
 //General Close Event
 void wxGUI2Frame::OnClose(wxCloseEvent &event)
@@ -50,18 +51,21 @@ void wxGUI2Frame::OnSend(wxCommandEvent &event)
             }
                 else {
                         SetStatusText(_("Sending request..."),2);
-                        sslrequest requests;
 
                         if (s_port != "80"){
                         //Text in the status bar
 
+                            sslrequest requests;
                             requests.rqst_set (url_addr, s_port, request1);
+                            tc_response->SetValue(requests.replyreceived);
                          }
                             else {
-                                 requests.rqst_set (url_addr, request1);
+                                 httprequest requests;
+                                 requests.rqst_set (url_addr, s_port, request1);
+                                 tc_response->SetValue(requests.replyreceived);
                             }
 
-                tc_response->SetValue(requests.replyreceived);
+
                 SetStatusText(_("Finished processing the request"),2);
 
                 }
