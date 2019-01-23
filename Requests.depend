@@ -2932,7 +2932,7 @@
 1493488838 d:\wxwidgets-3.0.3\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1522242149 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
+1548255441 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
 	"wxGUI2.h"
 	"sslrequest.h"
 	"httprequest.h"
@@ -11784,7 +11784,7 @@
 1522067763 source:d:\c++ projects\Новая папка\requests\src\events.cpp
 	"wxGUI2.h"
 
-1520368799 source:d:\c++ projects\Новая папка\requests\src\menues.cpp
+1548255334 source:d:\c++ projects\Новая папка\requests\src\menues.cpp
 	"wxGUI2.h"
 
 1522067763 source:d:\c++ projects\Новая папка\requests\src\toolbars.cpp
@@ -11794,7 +11794,7 @@
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1522242148 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1548255333 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
 	"head_type.h"
 
@@ -11842,4 +11842,7 @@
 
 1522241938 source:d:\c++ projects\Новая папка\requests\src\httprequest.cpp
 	"httprequest.h"
+
+1522242391 source:d:\c++ projects\Новая папка\requests\src\sslrequest.cpp
+	"sslrequest.h"
 

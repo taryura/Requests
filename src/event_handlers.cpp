@@ -95,9 +95,21 @@ void wxGUI2Frame::OnOpen(wxCommandEvent &event)
 
 void wxGUI2Frame::OnSave(wxCommandEvent &event)
 {
+      wxFileDialog * openFileDialog = new wxFileDialog(this);
+
+  if (openFileDialog->ShowModal() == wxID_OK){
+      wxString fileName = openFileDialog->GetPath();
+      tc_response->SaveFile(fileName);
+  }
+
+
+    /*wxMessageDialog *dial = new wxMessageDialog(NULL,
+        wxT("Are you sure to quit?"), wxT("Question"),
+        wxYES_NO | wxNO_DEFAULT | wxICON_QUESTION);
+    dial->ShowModal();
 
     wxString msg = "Supposed to save the project";
-    wxMessageBox(msg, _("Welcome to..."));
+    wxMessageBox(msg, _("Welcome to...")); */
 }
 
 //import submenu

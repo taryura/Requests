@@ -117,7 +117,12 @@ void client::handle_read(const boost::system::error_code& error,
             boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
         }
-      reply2 = ("Read of the body failed: the length is undetermined. Please try to resend the request.");
+      //reading till EOF if HTML
+      boost::asio::async_read_until(socket_,
+            MyBuffer, "</html>",
+            boost::bind(&client::handle_read_content, this,
+            boost::asio::placeholders::error));
+      //reply2 = ("Read of the body failed: the length is undetermined. Please try to resend the request.\r\n" + header);
       }
 
     }

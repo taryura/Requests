@@ -16,7 +16,7 @@ void wxGUI2Frame::CreateFileMenu()
     //file menu
     fileMenu->Append(idMenuFile_New, _("&New\tCtrl-N"), _("New project"));
     fileMenu->Append(idMenuFile_Open, _("&Open\tCtrl-O"), _("Open project"));
-    fileMenu->Append(idMenuFile_Save, _("&Open\tCtrl-S"), _("Save project"));
+    fileMenu->Append(idMenuFile_Save, _("&Save\tCtrl-S"), _("Save project"));
     fileMenu->AppendSeparator();
 
     wxMenu* imp = new wxMenu;
