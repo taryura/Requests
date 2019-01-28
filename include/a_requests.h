@@ -30,6 +30,7 @@ public:
   std::string request_;
   std::string reply2;
   std::string header;
+  std::string error_mess_;
   client(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
       boost::asio::ip::tcp::resolver::iterator endpoint_iterator,

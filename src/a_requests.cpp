@@ -1,6 +1,9 @@
 #include "a_requests.h"
 #include "head_type.h"
 
+//For debug purposes
+//#include "boost/lexical_cast.hpp"
+
 client::client(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
       boost::asio::ip::tcp::resolver::iterator endpoint_iterator,
@@ -94,18 +97,33 @@ void client::handle_read(const boost::system::error_code& error,
       std::string string1 = parsed_header.find_str("Content-Length");
       if (!parsed_header.err){
         std::string value1 = parsed_header.find_val(string1);
+
+        //Retrieving "Content-Length" value
         int length = atoi(value1.c_str());
+
+        //Length of the HTTP header
+        int header_length = header.find ("\r\n\r\n");
+
+        //Debug code
+        //std::ostringstream s;
+        //s << bytes_transferred;
+        //error_mess_ = "\r\nBytes transfered: " + boost::lexical_cast<std::string>(bytes_transferred) +
+        //"\r\n" + "Content-Length: " + value1 + "\r\nActual first part length: " + boost::lexical_cast<std::string>(header.length());
         //checking if everything has been already transfered
-        if ((bytes_transferred + length) > header.length()){
+
+
+        //header.length = length of the first block,
+        //header_length = Length of the HTTP header
+        //length = Content length defined in HTTP header
+        if ((header_length + 4 + length) > header.length()){
           //if not reading till EOF
           boost::asio::async_read(socket_, MyBuffer,
-          boost::asio::transfer_at_least(length),
+          boost::asio::transfer_at_least(length - (header.length() - header_length)),
           boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
         }
         else {
             reply2 = header;
-            return;
         }
       }
       else {
@@ -117,12 +135,14 @@ void client::handle_read(const boost::system::error_code& error,
             boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
         }
-      //reading till EOF if HTML
-      boost::asio::async_read_until(socket_,
+        else {
+        //reading till EOF if HTML
+        boost::asio::async_read_until(socket_,
             MyBuffer, "</html>",
             boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
       //reply2 = ("Read of the body failed: the length is undetermined. Please try to resend the request.\r\n" + header);
+        }
       }
 
     }
@@ -142,7 +162,7 @@ void client::handle_read_content(const boost::system::error_code& error)
     }
     else
     {
-      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + header);
+      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + header + error_mess_);
       std::cout << "Read failed: " << error.message() << "\n";
     }
 
