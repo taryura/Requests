@@ -11794,11 +11794,11 @@
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1548255333 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1548684496 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
 	"head_type.h"
 
-1548447050 d:\c++ projects\Новая папка\requests\include\a_requests.h
+1548779099 d:\c++ projects\Новая папка\requests\include\a_requests.h
 	<cstring>
 	<string>
 	<iostream>
@@ -11807,6 +11807,7 @@
 	<boost/bind.hpp>
 	<boost/asio.hpp>
 	<boost/asio/ssl.hpp>
+	"input_validator.h"
 
 1446667740 source:d:\c++ projects\Новая папка\requests\resource.rc
 	"wx/msw/wx.rc"
@@ -11845,4 +11846,10 @@
 
 1522242391 source:d:\c++ projects\Новая папка\requests\src\sslrequest.cpp
 	"sslrequest.h"
+
+1548776960 d:\c++ projects\Новая папка\requests\include\input_validator.h
+	<iostream>
+
+1548779099 source:d:\c++ projects\Новая папка\requests\src\input_validator.cpp
+	"input_validator.h"
 

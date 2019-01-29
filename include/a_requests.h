@@ -9,7 +9,7 @@
 #include <boost/bind.hpp>
 #include <boost/asio.hpp>
 #include <boost/asio/ssl.hpp>
-
+#include "input_validator.h"
 
 class client{
 private:

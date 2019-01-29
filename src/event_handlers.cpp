@@ -12,6 +12,7 @@
 #include "sslrequest.h"
 #include "httprequest.h"
 
+
 //General Close Event
 void wxGUI2Frame::OnClose(wxCloseEvent &event)
 {
@@ -39,15 +40,17 @@ void wxGUI2Frame::OnSend(wxCommandEvent &event)
     tc_value = tc_request->GetValue();
     std::string request1 = std::string(tc_value.mb_str());
 
+    //validation of port value
+    input_validator check_result (s_port);
 
     if (url_addr == ""){
         wxMessageBox("URL address should not be empty", _("Error!"));
     }
-        else if (s_port == ""){
+        else if (s_port == "" or !check_result.integer_flag){
             wxMessageBox("Port should be 0 - 65535", _("Error!"));
         }
             else if (request1 == ""){
-                wxMessageBox("Request field should not be empty", _("Error!"));
+                wxMessageBox("Request field should not be empty and should end with two line breaks", _("Error!"));
             }
                 else {
                         SetStatusText(_("Sending request..."),2);
