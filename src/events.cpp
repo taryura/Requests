@@ -25,9 +25,9 @@ BEGIN_EVENT_TABLE(wxGUI2Frame, wxFrame)
     EVT_MENU(idMenuQuit, wxGUI2Frame::OnQuit)
 
     //edit menu
-    EVT_MENU(idMenuEdit_Copy, wxGUI2Frame::OnCopy)
-    EVT_MENU(idMenuEdit_Cut, wxGUI2Frame::OnCut)
-    EVT_MENU(idMenuEdit_Paste, wxGUI2Frame::OnPaste)
+    EVT_MENU(wxID_COPY, wxGUI2Frame::OnCopy)
+    EVT_MENU(wxID_CUT, wxGUI2Frame::OnCut)
+    EVT_MENU(wxID_PASTE, wxGUI2Frame::OnPaste)
 
     //help menu
     EVT_MENU(idMenuAbout, wxGUI2Frame::OnAbout)

@@ -7,7 +7,6 @@
  * License:
  **************************************************************/
 
-
 #include "wxGUI2.h"
 #include "sslrequest.h"
 #include "httprequest.h"
@@ -135,8 +134,6 @@ void wxGUI2Frame::OnQuit(wxCommandEvent &event)
     Destroy();
 }
 
-
-
 //Edit Menu
 
 void wxGUI2Frame::OnCopy(wxCommandEvent &event)
@@ -153,8 +150,9 @@ void wxGUI2Frame::OnCut(wxCommandEvent &event)
 
 void wxGUI2Frame::OnPaste(wxCommandEvent &event)
 {
-    wxString msg = "Supposed to paste";
-    wxMessageBox(msg, _("Welcome to..."));
+    tc_request->Paste();
+    //wxString msg = "Supposed to paste";
+    //wxMessageBox(msg, _("Welcome to..."));
 }
 
 void wxGUI2Frame::OnAbout(wxCommandEvent &event)
@@ -162,3 +160,32 @@ void wxGUI2Frame::OnAbout(wxCommandEvent &event)
     wxString msg = "Hello my friend";
     wxMessageBox(msg, _("Welcome to..."));
 }
+
+bool wxGUI2Frame::ProcessEvent(wxEvent& event)
+{
+     static wxEvent* s_lastEvent = NULL;
+     // Check for infinite recursion
+     if (& event == s_lastEvent)
+         return false;
+     if (event.IsCommandEvent() &&
+        !event.IsKindOf(CLASSINFO(wxChildFocusEvent)) &&
+        !event.IsKindOf(CLASSINFO(wxContextMenuEvent)))
+     {
+         s_lastEvent = & event;
+         wxControl *focusWin = wxDynamicCast(FindFocus(), wxControl);
+         bool success = false;
+         if (focusWin)
+             success = focusWin->GetEventHandler()
+                                 ->ProcessEvent(event);
+         if (!success)
+             success = wxFrame::ProcessEvent(event);
+         s_lastEvent = NULL;
+         return success;
+     }
+
+     else
+
+     {
+         return wxFrame::ProcessEvent(event);
+     }
+ }

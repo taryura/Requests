@@ -68,6 +68,8 @@ class wxGUI2Frame: public wxFrame
         void OnCut(wxCommandEvent& event);
         void OnPaste(wxCommandEvent& event);
 
+
+
         //Help Menu
         void OnAbout(wxCommandEvent& event);
 
@@ -86,6 +88,10 @@ class wxGUI2Frame: public wxFrame
         wxTextCtrl *tc_url;
         wxTextCtrl *tc_port;
 
+        //Override function - redirects CUT COPY PASTE events from main frame
+        //to the focused text control
+
+        bool ProcessEvent(wxEvent& event);
 
         DECLARE_EVENT_TABLE()
 };
