@@ -1,5 +1,6 @@
 #include "a_requests.h"
-#include "head_type.h"
+//#include "head_type.h"
+#include "parse_chunk.h"
 
 //For debug purposes
 //#include "boost/lexical_cast.hpp"
@@ -91,8 +92,26 @@ void client::handle_read(const boost::system::error_code& error,
   {
     if (!error)
     {
-      header = buff_to_string(MyBuffer);
-      head_type parsed_header (header);
+      first_part = buff_to_string(MyBuffer);
+      reply2 = first_part;
+      //Length of the HTTP header
+      header_length = first_part.find ("\r\n\r\n");
+
+      //parsing header
+      head_type parsed_header (first_part);
+
+
+      chunk_to_transfer_int = parsed_header.chunk_bytes;
+
+      //defines offset where the chunk starts
+      cpi = 0;
+      chunk_start_pointer[cpi] = header_length + 4 + parsed_header.chunk_bytes_to_read.length() + 2;
+
+      //bytes to read = the value determined in the chunk HEX length - the length of the part we already received.
+      next_transfer_length = chunk_to_transfer_int - (first_part.length() - chunk_start_pointer[cpi]);
+
+      //Debug
+
       //reading till EOF if content length is determined.
       std::string string1 = parsed_header.find_str("Content-Length");
       if (!parsed_header.err){
@@ -101,39 +120,40 @@ void client::handle_read(const boost::system::error_code& error,
         //Retrieving "Content-Length" value
         int length = atoi(value1.c_str());
 
-        //Length of the HTTP header
-        int header_length = header.find ("\r\n\r\n");
-
-        //Debug code
-        //std::ostringstream s;
-        //s << bytes_transferred;
-        //error_mess_ = "\r\nBytes transfered: " + boost::lexical_cast<std::string>(bytes_transferred) +
-        //"\r\n" + "Content-Length: " + value1 + "\r\nActual first part length: " + boost::lexical_cast<std::string>(header.length());
         //checking if everything has been already transfered
 
 
         //header.length = length of the first block,
         //header_length = Length of the HTTP header
         //length = Content length defined in HTTP header
-        if ((header_length + 4 + length) > header.length()){
+        if ((header_length + 4 + length) > first_part.length()){
           //if not reading till EOF
           boost::asio::async_read(socket_, MyBuffer,
-          boost::asio::transfer_at_least(length - (header.length() - header_length)),
+          boost::asio::transfer_at_least(length - (first_part.length() - header_length)),
           boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
         }
         else {
-            reply2 = header;
+            reply2 = first_part;
         }
       }
       else {
-        //reading till EOF if chunked.
+
         string1 = parsed_header.find_str("Transfer-Encoding");
         if (!parsed_header.err){
+
+         //reading first chunk
+          boost::asio::async_read(socket_, MyBuffer,
+          boost::asio::transfer_at_least(next_transfer_length),
+          boost::bind(&client::handle_read_chunk, this,
+            boost::asio::placeholders::error));
+
+        /*
+        //reading till EOF if chunked.
           boost::asio::async_read_until(socket_,
             MyBuffer, "\r\n0\r\n",
             boost::bind(&client::handle_read_content, this,
-            boost::asio::placeholders::error));
+            boost::asio::placeholders::error));*/
         }
         else {
         //reading till EOF if HTML
@@ -153,16 +173,63 @@ void client::handle_read(const boost::system::error_code& error,
     }
   }
 
+void client::handle_read_chunk(const boost::system::error_code& error)
+  {
+    if (!error)
+    {
+      //std::cout << reply2 << std::endl;
+
+      reply2 += buff_to_string(MyBuffer);
+
+      parse_chunk next_chunk_beginning (reply2.substr(chunk_start_pointer[cpi] + chunk_to_transfer_int));
+
+      if (next_chunk_beginning.err)
+      {
+          boost::asio::async_read_until(socket_,
+            MyBuffer, "\r\n",
+            boost::bind(&client::handle_read_chunk, this,
+            boost::asio::placeholders::error));
+      }
+      else
+      {
+          cpi +=1;
+          chunk_start_pointer[cpi] = chunk_start_pointer[cpi-1] + chunk_to_transfer_int + 2 + next_chunk_beginning.chunk_bytes_to_read.length() + 2;
+          next_transfer_length = chunk_to_transfer_int - (reply2.length() - chunk_start_pointer[cpi]);
+
+          if (next_transfer_length > 0)
+          {
+          boost::asio::async_read(socket_, MyBuffer,
+          boost::asio::transfer_at_least(next_transfer_length),
+          boost::bind(&client::handle_read_chunk, this,
+          boost::asio::placeholders::error));
+          }
+          else
+          {
+             reply2 = ("Something's wrong with chunked read: " + error.message()+ "\r\n" + reply2 + error_mess_);
+          }
+
+
+      }
+    }
+    else
+    {
+      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + reply2 + error_mess_);
+      std::cout << "Read failed: " << error.message() << "\n";
+    }
+
+
+  }
+
 
 void client::handle_read_content(const boost::system::error_code& error)
   {
     if (!error)
     {
-      reply2 = header + buff_to_string(MyBuffer);
+      reply2 = first_part + buff_to_string(MyBuffer);
     }
     else
     {
-      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + header + error_mess_);
+      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + first_part + error_mess_);
       std::cout << "Read failed: " << error.message() << "\n";
     }
 

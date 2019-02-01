@@ -11798,7 +11798,7 @@
 	"a_requests.h"
 	"head_type.h"
 
-1548779099 d:\c++ projects\Новая папка\requests\include\a_requests.h
+1549036859 d:\c++ projects\Новая папка\requests\include\a_requests.h
 	<cstring>
 	<string>
 	<iostream>
@@ -11829,10 +11829,10 @@
 
 1493488838 d:\wxwidgets-3.0.3\include\wx\msw\rcdefs.h
 
-1522154205 source:d:\c++ projects\Новая папка\requests\src\head_type.cpp
+1549041526 source:d:\c++ projects\Новая папка\requests\src\head_type.cpp
 	"head_type.h"
 
-1522157998 d:\c++ projects\Новая папка\requests\include\head_type.h
+1549039676 d:\c++ projects\Новая папка\requests\include\head_type.h
 	<iostream>
 
 1522242148 d:\c++ projects\Новая папка\requests\include\httprequest.h
@@ -11852,4 +11852,11 @@
 
 1548779099 source:d:\c++ projects\Новая папка\requests\src\input_validator.cpp
 	"input_validator.h"
+
+1549041190 source:d:\c++ projects\Новая папка\requests\src\parse_chunk.cpp
+	"parse_chunk.h"
+
+1549033066 d:\c++ projects\Новая папка\requests\include\parse_chunk.h
+	<iostream>
+	"head_type.h"
 

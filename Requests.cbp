@@ -85,6 +85,7 @@
 		<Unit filename="include/head_type.h" />
 		<Unit filename="include/httprequest.h" />
 		<Unit filename="include/input_validator.h" />
+		<Unit filename="include/parse_chunk.h" />
 		<Unit filename="include/sslrequest.h" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
@@ -97,6 +98,7 @@
 		<Unit filename="src/httprequest.cpp" />
 		<Unit filename="src/input_validator.cpp" />
 		<Unit filename="src/menues.cpp" />
+		<Unit filename="src/parse_chunk.cpp" />
 		<Unit filename="src/sslrequest.cpp" />
 		<Unit filename="wxGUI2.cpp" />
 		<Unit filename="wxGUI2.h" />
