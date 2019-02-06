@@ -3,7 +3,7 @@
 #include "parse_chunk.h"
 
 //For debug purposes
-//#include "boost/lexical_cast.hpp"
+#include "boost/lexical_cast.hpp"
 
 client::client(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
@@ -98,19 +98,7 @@ void client::handle_read(const boost::system::error_code& error,
       header_length = first_part.find ("\r\n\r\n");
 
       //parsing header
-      head_type parsed_header (first_part);
-
-
-      chunk_to_transfer_int = parsed_header.chunk_bytes;
-
-      //defines offset where the chunk starts
-      cpi = 0;
-      chunk_start_pointer[cpi] = header_length + 4 + parsed_header.chunk_bytes_to_read.length() + 2;
-
-      //bytes to read = the value determined in the chunk HEX length - the length of the part we already received.
-      next_transfer_length = chunk_to_transfer_int - (first_part.length() - chunk_start_pointer[cpi]);
-
-      //Debug
+      parse_chunk parsed_header (first_part, 1);
 
       //reading till EOF if content length is determined.
       std::string string1 = parsed_header.find_str("Content-Length");
@@ -142,12 +130,14 @@ void client::handle_read(const boost::system::error_code& error,
         string1 = parsed_header.find_str("Transfer-Encoding");
         if (!parsed_header.err){
 
-         //reading first chunk
-          boost::asio::async_read(socket_, MyBuffer,
-          boost::asio::transfer_at_least(next_transfer_length),
-          boost::bind(&client::handle_read_chunk, this,
-            boost::asio::placeholders::error));
+               //chunk_to_transfer_int = parsed_header.chunk_bytes;
 
+          //defines offset where the chunk starts
+          cpi = 0;
+          chunk_start_pointer[cpi] = 0;
+          chunk_length[cpi] = header_length + 2;
+
+        handle_read_chunk (error);
         /*
         //reading till EOF if chunked.
           boost::asio::async_read_until(socket_,
@@ -177,38 +167,62 @@ void client::handle_read_chunk(const boost::system::error_code& error)
   {
     if (!error)
     {
-      //std::cout << reply2 << std::endl;
 
-      reply2 += buff_to_string(MyBuffer);
+      reply2 = reply2 + buff_to_string(MyBuffer);
 
-      parse_chunk next_chunk_beginning (reply2.substr(chunk_start_pointer[cpi] + chunk_to_transfer_int));
+      //parsing the chunk received
 
-      if (next_chunk_beginning.err)
+      try
+      {
+
+      parse_chunk next_chunk_beginning (reply2, chunk_start_pointer, chunk_length, cpi);
+
+
+
+      if (next_chunk_beginning.err or next_chunk_beginning.end_of_chunk)
       {
           boost::asio::async_read_until(socket_,
             MyBuffer, "\r\n",
             boost::bind(&client::handle_read_chunk, this,
             boost::asio::placeholders::error));
+
       }
+
+          //calculating and setting new chunk offset (to be moved in a separate method)
       else
       {
-          cpi +=1;
-          chunk_start_pointer[cpi] = chunk_start_pointer[cpi-1] + chunk_to_transfer_int + 2 + next_chunk_beginning.chunk_bytes_to_read.length() + 2;
-          next_transfer_length = chunk_to_transfer_int - (reply2.length() - chunk_start_pointer[cpi]);
 
           if (next_transfer_length > 0)
           {
+
           boost::asio::async_read(socket_, MyBuffer,
           boost::asio::transfer_at_least(next_transfer_length),
           boost::bind(&client::handle_read_chunk, this,
           boost::asio::placeholders::error));
           }
           else
-          {
-             reply2 = ("Something's wrong with chunked read: " + error.message()+ "\r\n" + reply2 + error_mess_);
-          }
+            if (chunk_length[cpi] =0 )
+             {
+             return;
+             }
 
+      }
 
+  }
+         catch (...)
+      {
+
+      reply2 = reply2
+      + "\r\n\r\n"
+      + "We are parsing:\r\n" + reply2.substr(chunk_start_pointer[cpi] + chunk_length[cpi]) + "\r\n\r\n"
+      + "The chunk starts at: " + reply2.substr(chunk_start_pointer[cpi]) + "\r\n\r\n"
+      + "\r\n Debug " + "CH_ST_P_2 "
+      + boost::lexical_cast<std::string>(chunk_start_pointer[cpi])+ "\r\n"
+      + "CH_LEN " + boost::lexical_cast<std::string>(chunk_length[cpi]) + "\r\n"
+      + "CPI= " + boost::lexical_cast<std::string>(cpi) + "\r\n"
+      + "Next transfer length: " + boost::lexical_cast<std::string>(next_transfer_length) + "\r\n";
+      //+ "zzz=" + boost::lexical_cast<std::string>(zzz) + "\r\n";
+      return;
       }
     }
     else
@@ -217,9 +231,7 @@ void client::handle_read_chunk(const boost::system::error_code& error)
       std::cout << "Read failed: " << error.message() << "\n";
     }
 
-
   }
-
 
 void client::handle_read_content(const boost::system::error_code& error)
   {

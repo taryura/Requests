@@ -23,8 +23,12 @@ void sslrequest::rqst_set (std::string address1,std::string port1,std::string &r
     std::stringstream message;
     message << "Exception: ";
     message << e.what() << " ";
-    message << "Please try again later";
+    message << "Please try again later\r\n";
     replyreceived = message.str();
+
+    //debug
+    //replyreceived = replyreceived + c.reply2;
+
     std::cerr << "Exception: Could not establish connection. Please try again later" << "\n";
 
   }
