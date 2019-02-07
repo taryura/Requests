@@ -102,7 +102,9 @@ void client::handle_read(const boost::system::error_code& error,
 
       //reading till EOF if content length is determined.
       std::string string1 = parsed_header.find_str("Content-Length");
-      if (!parsed_header.err){
+
+      if (!parsed_header.err)
+        {
         std::string value1 = parsed_header.find_val(string1);
 
         //Retrieving "Content-Length" value
@@ -114,18 +116,23 @@ void client::handle_read(const boost::system::error_code& error,
         //header.length = length of the first block,
         //header_length = Length of the HTTP header
         //length = Content length defined in HTTP header
-        if ((header_length + 4 + length) > first_part.length()){
+
+        int fpl = first_part.length();
+        if ((header_length + 4 + length) > fpl)
+          {
           //if not reading till EOF
           boost::asio::async_read(socket_, MyBuffer,
           boost::asio::transfer_at_least(length - (first_part.length() - header_length)),
           boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
-        }
-        else {
+          }
+        else
+        {
             reply2 = first_part;
         }
       }
-      else {
+      else
+        {
 
         string1 = parsed_header.find_str("Transfer-Encoding");
         if (!parsed_header.err){
@@ -137,25 +144,23 @@ void client::handle_read(const boost::system::error_code& error,
           chunk_start_pointer[cpi] = 0;
           chunk_length[cpi] = header_length + 2;
 
-        handle_read_chunk (error);
-        /*
-        //reading till EOF if chunked.
-          boost::asio::async_read_until(socket_,
-            MyBuffer, "\r\n0\r\n",
-            boost::bind(&client::handle_read_content, this,
-            boost::asio::placeholders::error));*/
+          //Delegating to chunk processing method
+          handle_read_chunk (error);
+
         }
-        else {
-        //reading till EOF if HTML
+        else
+        {
+        //reading till EOF if neither the content-length
+        //nor the chunked transfer defined (till HTML close tag)
         boost::asio::async_read_until(socket_,
             MyBuffer, "</html>",
             boost::bind(&client::handle_read_content, this,
             boost::asio::placeholders::error));
-      //reply2 = ("Read of the body failed: the length is undetermined. Please try to resend the request.\r\n" + header);
         }
-      }
+       }
 
     }
+    //if previous reading has ended with an error code
     else
     {
       reply2 = ("Read failed: " + error.message());
@@ -167,67 +172,64 @@ void client::handle_read_chunk(const boost::system::error_code& error)
   {
     if (!error)
     {
+      reply2 += buff_to_string(MyBuffer);
 
-      reply2 = reply2 + buff_to_string(MyBuffer);
 
       //parsing the chunk received
-
-      try
-      {
+  try
+     {
 
       parse_chunk next_chunk_beginning (reply2, chunk_start_pointer, chunk_length, cpi);
 
 
-
-      if (next_chunk_beginning.err or next_chunk_beginning.end_of_chunk)
+      if (next_chunk_beginning.end_of_file)
       {
-          boost::asio::async_read_until(socket_,
-            MyBuffer, "\r\n",
-            boost::bind(&client::handle_read_chunk, this,
-            boost::asio::placeholders::error));
-
+              return;
       }
 
-          //calculating and setting new chunk offset (to be moved in a separate method)
       else
       {
 
-          if (next_transfer_length > 0)
-          {
+        //Reading more data if the length field is not fully transfered
+        if (next_chunk_beginning.err or next_chunk_beginning.end_of_chunk)
+        {
+            boost::asio::async_read_until(socket_,
+              MyBuffer, "\r\n",
+              boost::bind(&client::handle_read_chunk, this,
+              boost::asio::placeholders::error));
 
-          boost::asio::async_read(socket_, MyBuffer,
-          boost::asio::transfer_at_least(next_transfer_length),
-          boost::bind(&client::handle_read_chunk, this,
-          boost::asio::placeholders::error));
-          }
-          else
-            if (chunk_length[cpi] =0 )
-             {
-             return;
-             }
+        }
+
+        //Reading next chunk if its length is determined
+        else
+        {
+            boost::asio::async_read(socket_, MyBuffer,
+            boost::asio::transfer_at_least(next_transfer_length),
+            boost::bind(&client::handle_read_chunk, this,
+            boost::asio::placeholders::error));
+        }
 
       }
 
-  }
+     }
+         //any exception during parsing
          catch (...)
       {
 
       reply2 = reply2
       + "\r\n\r\n"
-      + "We are parsing:\r\n" + reply2.substr(chunk_start_pointer[cpi] + chunk_length[cpi]) + "\r\n\r\n"
-      + "The chunk starts at: " + reply2.substr(chunk_start_pointer[cpi]) + "\r\n\r\n"
-      + "\r\n Debug " + "CH_ST_P_2 "
+      + "\r\n Debug " + "CHUNK_START_POINTER: "
       + boost::lexical_cast<std::string>(chunk_start_pointer[cpi])+ "\r\n"
       + "CH_LEN " + boost::lexical_cast<std::string>(chunk_length[cpi]) + "\r\n"
       + "CPI= " + boost::lexical_cast<std::string>(cpi) + "\r\n"
       + "Next transfer length: " + boost::lexical_cast<std::string>(next_transfer_length) + "\r\n";
-      //+ "zzz=" + boost::lexical_cast<std::string>(zzz) + "\r\n";
       return;
       }
     }
+    //if previous reading has ended with an error code
     else
     {
-      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + reply2 + error_mess_);
+      reply2 = "Read2 failed: " + error.message()+ "\r\n" + reply2;
       std::cout << "Read failed: " << error.message() << "\n";
     }
 
@@ -239,9 +241,11 @@ void client::handle_read_content(const boost::system::error_code& error)
     {
       reply2 = first_part + buff_to_string(MyBuffer);
     }
+
+    //if previous reading has ended with an error code
     else
     {
-      reply2 = ("Read2 failed: " + error.message()+ "\r\n" + first_part + error_mess_);
+      reply2 = ("Read3 failed: " + error.message()+ "\r\n" + first_part + error_mess_);
       std::cout << "Read failed: " << error.message() << "\n";
     }
 

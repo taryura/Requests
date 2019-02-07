@@ -25,7 +25,6 @@ private:
       size_t bytes_transferred);
   void handle_read_content(const boost::system::error_code& error);
   void handle_read_chunk(const boost::system::error_code& error);
-  //void debug_read_chunk(const boost::system::error_code& error);
   std::string buff_to_string (boost::asio::streambuf &MyBuffer);
 
 public:

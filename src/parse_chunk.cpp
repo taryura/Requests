@@ -93,8 +93,7 @@ if (!err)
                   else
                   {
 
-                  end_of_file = 1;
-                  std::cout << "End of file... " << std::endl;
+                  std::cout << "\r\nEnd of file... " << std::endl;
 
                   return;
                   }
@@ -105,7 +104,7 @@ if (!err)
         if (next_transfer_length == 0)
         {
             end_of_chunk = 1;
-            std::cout << "End of chunk. To read: " << next_transfer_length << std::endl;
+            std::cout << "\r\nEnd of chunk. To read: " << next_transfer_length << std::endl;
         }
 
         else
@@ -159,12 +158,7 @@ void parse_chunk::parse (const std::string &my_chunk)
         }
 
         err = retrieve_chunk_size();
-        if (chunk_bytes == 0)
-           {
-            err = 1;
-            end_of_file = 1;
-            return ;
-           }
+
      }
 
 
@@ -204,10 +198,12 @@ int parse_chunk::recalc (std::string reply2, int *chunk_start_pointer, int *chun
 
     parse (string_to_recalc);
 
+    if (end_of_file){return 1;}
+
     if (err)
         {
 
-        std::cout << "Error: chunk length data is not complete" << std::endl;
+        std::cout << "\r\nError: chunk length data is not complete" << std::endl;
         short_length_data = 1;
 
         return 1;
@@ -215,6 +211,7 @@ int parse_chunk::recalc (std::string reply2, int *chunk_start_pointer, int *chun
 
     recalc2(reply2, chunk_start_pointer, chunk_length,
                              next_transfer_length, cpi);
+    //if (end_of_file){return 1;}
 
     return 0;
 }
@@ -227,11 +224,22 @@ void parse_chunk::recalc2 (std::string reply2, int *chunk_start_pointer, int *ch
     chunk_length[cpi] = chunk_bytes;
     chunk_start_pointer[cpi] = chunk_start_pointer[cpi-1] + chunk_length[cpi-1] + 2 + offset_corrector + chunk_bytes_to_read.length() + 2;
 
+    if (chunk_length[cpi] == 0)
+    {
+        err = 1;
+        end_of_file = 1;
+        return;
+    }
+    else
+    {
+
+
     next_transfer_length = chunk_length[cpi] - (reply2.length() - chunk_start_pointer[cpi]);
     std::cout << "chunk_start_pointer " << cpi << ": " << chunk_start_pointer[cpi] << std::endl;
     std::cout << "Next part: " << reply2.substr (chunk_start_pointer[cpi]) << std::endl;
     std::cout << "Previous part: " << reply2.substr (chunk_start_pointer[cpi-1]) << std::endl;
 
+    }
     /*std::cout << "Recalc says: " << chunk_start_pointer[cpi] <<", "<< chunk_length[cpi] << std::endl;
     cpi +=1;
     std::cout << "String to recalc: " << string_to_recalc << std::endl;
@@ -257,7 +265,13 @@ bool parse_chunk::retrieve_chunk_size ()
 
    chunk_bytes = hex_convert(chunk_bytes_to_read);
    if (chunk_bytes == -1){return 1;}
-   else {return 0;}
+   else if (chunk_bytes == 0)
+   {
+       end_of_file = 1;
+       return 1;
+   }
+   else
+    {return 0;}
    }
    else {return 1;}
 }

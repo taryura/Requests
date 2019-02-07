@@ -1,0 +1,975 @@
+chunk_bytes_to_read HEX 36bbNext part beggining 
+36bb
+<!DOCTYPE
+The number of crlf 2
+err 0
+Initial offset corrector: 0
+chunk_bytes_to_read HEX 36bbchunk_start_pointer 1: 503
+Next part: <!DOCTYPE
+Previous part: HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 07 Feb 2019 14:48:29 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+Expires: Wed, 17 Aug 2005 00:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: 41d353b283d1d35d6d6b50b4d59a4955=0o4kp7q6kv062i3680mitrt004; path=/; secure; HttpOnly
+Last-Modified: Thu, 07 Feb 2019 14:48:32 GMT
+
+36bb
+<!DOCTYPE
+Ready to read: 14002
+The length is too short:
+2
+Next part beggining 
+3f4b
+
+    
+	<form action="/" method="post" id="searchform" class="searchForm" role="search" style="display: none;"><div>
+		<input name="searchword" id="mod-search-searchword s" maxlength="200"  class="inputbox search-query searchInput" type="search" size="20" placeholder="Поиск..." />		<input type="hidden" name="task" value="search" />
+		<input type="hidden" name="option" value="com_search" />
+		<input type="hidden" name="Itemid" value="101" />
+        <button id="searchsubmit" class="searchBtn" type="submit"><i class="fa fa-search"></i></button></div>
+	</form>
+
+
+  </div>
+</div>
+<div class="siteWrap">
+<div class="container">
+  <div class="innerContainer">
+    <div class="wrapper">
+            <div class="header">
+        <div id="homeSlider" class="flexslider">
+          <ul class="slides">
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_2-1-150x150.jpg ">
+              <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/headers/slider1.jpg);">
+                <div class="slideInner">
+                  <h5 class="homeSlideSubTitle"><b>На основе применения энергоэффективных технологий и оборудования мы обеспечиваем нашим клиентам:</b><br>
+                    <br>
+                    - снижение энергопотребления<br>
+                    - снижение себестоимости выпускаемой продукции<br>
+                    - увеличение производительности производственных мощностей<br>
+                    - повышение качества и надёжности</h5>
+                </div>
+              </div>
+            </li>
+            <!--<li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" data-thumb="#02/home_3-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>
+              <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_1-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>-->
+          </ul>
+          <ol class="flex-control-nav flex-control-paging">
+            <li><a class="">1</a></li>
+            <li><a class="flex-active">2</a></li>
+            <li><a class="">3</a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner"> </div>
+        <div class="homeBlocks cols cols-4">
+          <div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/inzhiniring-i-servis.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/inginiring.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Инжиниринг</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Комплекс предложений для Вашего предприятия!
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/elektrodvigateli.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/block1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Энергоэффективные электродвигатели</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Максимальная производительность - минимальные энергозастраты!
+<p data-hover="Подробнее" class="Btn homeBlockBtn"><span class="before">Подробнее</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/preobrazovateli-chastoty.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/84-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Преобразователи частоты</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Уменьшим потребление электроенергии на предприятии!
+<p data-hover="Узнать подробности" class="Btn homeBlockBtn"><span class="before">Узнать подробности</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/svetodiodnoe-osveshchenie.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/47-1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Светодиодное освещение</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Кратная информация
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+
+        </div>
+        <div class="content">
+          <div class="inner">
+            <div class="item-page" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="ru-RU" />
+	
+		
+						
+		
+	
+	
+		
+									<div itemprop="articleBody">
+		<p><span style="text-decoration: underline;"><em><strong>Мы предлагаем комплексное бесплатное техническое аудиторское решение, направленное на обеспечение энергосбережения предприятия.</strong></em></span></p>
+<ul>
+<li>Мы исследуем каждый электродвигатель, электромотор на Вашем предприятии и рассчитаем экономический эффект по экономии электроэнергии от внедрения энергоэффективных электродвигателей.<br />Вы можете у нас купить энергоэффективные <strong>электродвигатели</strong> производства <strong>OMEC MOTORS (Нидерланды), ABB (Швеция), концерн «РУСЭЛПРОМ» (Россия)</strong> и других производителей.</li>
+<li>Мы делаем расчёт и, при необходимости, предлагаем замену существующей перекачивающей станции или вентиляционной системы на оборудование, в которое входит преобразователь частоты и энергоэффективный электродвигатель. После расчёта Вы получаете данные об экономическом эффекте от внедрения данного привода.<br />Вы можете у нас купить высококачественные <strong>преобразователи частоты КЕВ (Германия), АВВ (Швеция)</strong> и других производителей.</li>
+<li>Мы делаем расчёт замены существующего освещения на светодиодные светильники и рассчитываем экономический эффект от их внедрения.<br />Вы можете у нас купить <strong>светодиодные светильники</strong> торговой марки <strong>VILED (совместное производство Украина – Россия)</strong>.</li>
+<li>Мы располагаем необходимыми материально-техническими ресурсами и специалистами высокой квалификации, постоянно проходящими обучение в Германии с большим опытом работы в проектировании электроприводов, систем автоматики и модернизации оборудования<br />После бесплатной диагностики мы производим качественный <strong>ремонт</strong> любых <strong>преобразователей частоты и блоков питания</strong>;</li>
+</ul>
+<p>На взаимовыгодных условиях мы обеспечиваем нашим клиентам <span style="text-decoration: underline;">сокращение затрат на электроэнергию, уменьшение себестоимости, увеличение производительности и надежности выпускаемой продукции</span> на основе применения энергоэффективных электродвигателей, преобразователей частоты и создания энергоэффективного оборудования.</p> 	</div>
+
+	
+							</div>
+
+          </div>
+        </div>
+                      </div>
+      
+      <!-- End Wrapper --> 
+    </div>
+  </div>
+  <!-- end Container -->
+  <footer class="footer">
+    <div class="inner clearfix darkBg">
+      <div class="cols cols-2">
+        <div>
+          <h3 class="footerTitle">ЛБЮ-тех</h3>
+          <p class="footerDesc">ООО «ЛБЮ - Тех» с 2000 года является одним из ведущих поставщиков электротехнического оборудования в Украине. Благодаря высокому качеству поставляемой продукции и четкому выполнению своих обязательств ООО "ЛБЮ - Тех" приобрело широкую известность и отличную репутацию среди потребителей и производителей промышленного оборудования Украины, России, Европы, США. Номенклатура, предлагаемая нашим предприятием, включает в себя электродвигатели, низковольтную технику, преобразователи частоты, устройства управления и многое другое.<br>
+          </p>
+          <ul class="footerBottomLeft">
+            <li class="phoneFooter"><i class="fa fa-phone"></i><a href="tel:380445372992">38 044 5372992</a></li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-facebook"></i></a> </li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-pinterest"></i></a> </li>
+            <li class="moreContactFooter"><a href="/kontakty.html">Наши контакты <i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footerTitle">Больше информации</h3>
+          <div class="menu-footer-meer-info-container">
+            <ul id="menu-footer-meer-info" class="menu">
+              <li id="menu-item-5495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5495"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-vemz.html">Электродвигатели ВЭМЗ </a></li>
+              <li id="menu-item-6396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6396"><a href="#/inspiratiemagazine-aanvragen/">Электродвигатели ABB </a></li>
+              <li id="menu-item-5497" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5497"><a href="https://lbu.com.ua/produktsiya/elektricheskie-dvigateli-nkemz.html">Электродвигатели НКЭМЗ </a></li>
+              <li id="menu-item-6470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6470"><a href="https://lbu.com.ua/produktsiya/preobrazovateli-chastoty-keb.html">Преобразователи частоты KEB</a></li>
+              <li id="menu-item-5494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5494"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-omec-motors.html">Электродвигатели OMEC Motors</a></li>
+              <li id="menu-item-5496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5496"><a href="/">Преобразователи частоты ABB</a></li>
+            </ul>
+          </div>
+          <a class="Btn footerBtn" data-hover="Задать вопрос" href="/">Задать вопрос</a> <a class="Btn greyBtn footerBtn" data-hover="Обратная связь" href="https://lbu.com.ua/kontakty.html">Обратная связь</a> </div>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <div class="inner">
+        <div class="menu-footerbottom-container">
+<ul id="menu-footerbottom" class="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Киев: <a href="tel:+380445372992">+380 (44) 537-2992</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Новая Каховка: <a href="tel:+380554953783">+380 (5549) 53-783</a></li>
+</ul>
+</div>
+
+        <a href="https:/www.smart-support.com.ua/" class="copyright">Разработка сайта Smart Support.</a><span> © 2006-2019 ООО "ЛБЮ-Тех"</span> </div>
+    </div>
+  </footer>
+</div>
+<!-- end SiteWrap -->
+
+<div style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" id="outdated">
+  <h6>Ваш браузер устарел!</h6>
+  <p>Обновите свой браузер, чтобы в полной мере насладиться этим веб-сайт (и многими другими) <a style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);" id="btnUpdateBrowser" href="https://outdatedbrowser.com/">Обновить!</a></p>
+  <p class="last"><a style="color: rgb(255, 255, 255);" href="#" id="btnCloseUpdateBrowser" title="Закрыть">×</a></p>
+</div>
+<script type="text/javascript" src="/templates/lbu2016/js/scripts_002.js"></script> 
+<script type="text/javascript" src="/templates/lbu2016/js/main.js"></script>
+</body>
+</html>
+
+
+The number of crlf 66
+err 0
+Initial offset corrector: 0
+chunk_bytes_to_read HEX 3f4bchunk_start_pointer 2: 14522
+Next part: 
+    
+	<form action="/" method="post" id="searchform" class="searchForm" role="search" style="display: none;"><div>
+		<input name="searchword" id="mod-search-searchword s" maxlength="200"  class="inputbox search-query searchInput" type="search" size="20" placeholder="Поиск..." />		<input type="hidden" name="task" value="search" />
+		<input type="hidden" name="option" value="com_search" />
+		<input type="hidden" name="Itemid" value="101" />
+        <button id="searchsubmit" class="searchBtn" type="submit"><i class="fa fa-search"></i></button></div>
+	</form>
+
+
+  </div>
+</div>
+<div class="siteWrap">
+<div class="container">
+  <div class="innerContainer">
+    <div class="wrapper">
+            <div class="header">
+        <div id="homeSlider" class="flexslider">
+          <ul class="slides">
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_2-1-150x150.jpg ">
+              <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/headers/slider1.jpg);">
+                <div class="slideInner">
+                  <h5 class="homeSlideSubTitle"><b>На основе применения энергоэффективных технологий и оборудования мы обеспечиваем нашим клиентам:</b><br>
+                    <br>
+                    - снижение энергопотребления<br>
+                    - снижение себестоимости выпускаемой продукции<br>
+                    - увеличение производительности производственных мощностей<br>
+                    - повышение качества и надёжности</h5>
+                </div>
+              </div>
+            </li>
+            <!--<li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" data-thumb="#02/home_3-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>
+              <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_1-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>-->
+          </ul>
+          <ol class="flex-control-nav flex-control-paging">
+            <li><a class="">1</a></li>
+            <li><a class="flex-active">2</a></li>
+            <li><a class="">3</a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner"> </div>
+        <div class="homeBlocks cols cols-4">
+          <div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/inzhiniring-i-servis.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/inginiring.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Инжиниринг</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Комплекс предложений для Вашего предприятия!
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/elektrodvigateli.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/block1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Энергоэффективные электродвигатели</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Максимальная производительность - минимальные энергозастраты!
+<p data-hover="Подробнее" class="Btn homeBlockBtn"><span class="before">Подробнее</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/preobrazovateli-chastoty.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/84-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Преобразователи частоты</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Уменьшим потребление электроенергии на предприятии!
+<p data-hover="Узнать подробности" class="Btn homeBlockBtn"><span class="before">Узнать подробности</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/svetodiodnoe-osveshchenie.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/47-1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Светодиодное освещение</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Кратная информация
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+
+        </div>
+        <div class="content">
+          <div class="inner">
+            <div class="item-page" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="ru-RU" />
+	
+		
+						
+		
+	
+	
+		
+									<div itemprop="articleBody">
+		<p><span style="text-decoration: underline;"><em><strong>Мы предлагаем комплексное бесплатное техническое аудиторское решение, направленное на обеспечение энергосбережения предприятия.</strong></em></span></p>
+<ul>
+<li>Мы исследуем каждый электродвигатель, электромотор на Вашем предприятии и рассчитаем экономический эффект по экономии электроэнергии от внедрения энергоэффективных электродвигателей.<br />Вы можете у нас купить энергоэффективные <strong>электродвигатели</strong> производства <strong>OMEC MOTORS (Нидерланды), ABB (Швеция), концерн «РУСЭЛПРОМ» (Россия)</strong> и других производителей.</li>
+<li>Мы делаем расчёт и, при необходимости, предлагаем замену существующей перекачивающей станции или вентиляционной системы на оборудование, в которое входит преобразователь частоты и энергоэффективный электродвигатель. После расчёта Вы получаете данные об экономическом эффекте от внедрения данного привода.<br />Вы можете у нас купить высококачественные <strong>преобразователи частоты КЕВ (Германия), АВВ (Швеция)</strong> и других производителей.</li>
+<li>Мы делаем расчёт замены существующего освещения на светодиодные светильники и рассчитываем экономический эффект от их внедрения.<br />Вы можете у нас купить <strong>светодиодные светильники</strong> торговой марки <strong>VILED (совместное производство Украина – Россия)</strong>.</li>
+<li>Мы располагаем необходимыми материально-техническими ресурсами и специалистами высокой квалификации, постоянно проходящими обучение в Германии с большим опытом работы в проектировании электроприводов, систем автоматики и модернизации оборудования<br />После бесплатной диагностики мы производим качественный <strong>ремонт</strong> любых <strong>преобразователей частоты и блоков питания</strong>;</li>
+</ul>
+<p>На взаимовыгодных условиях мы обеспечиваем нашим клиентам <span style="text-decoration: underline;">сокращение затрат на электроэнергию, уменьшение себестоимости, увеличение производительности и надежности выпускаемой продукции</span> на основе применения энергоэффективных электродвигателей, преобразователей частоты и создания энергоэффективного оборудования.</p> 	</div>
+
+	
+							</div>
+
+          </div>
+        </div>
+                      </div>
+      
+      <!-- End Wrapper --> 
+    </div>
+  </div>
+  <!-- end Container -->
+  <footer class="footer">
+    <div class="inner clearfix darkBg">
+      <div class="cols cols-2">
+        <div>
+          <h3 class="footerTitle">ЛБЮ-тех</h3>
+          <p class="footerDesc">ООО «ЛБЮ - Тех» с 2000 года является одним из ведущих поставщиков электротехнического оборудования в Украине. Благодаря высокому качеству поставляемой продукции и четкому выполнению своих обязательств ООО "ЛБЮ - Тех" приобрело широкую известность и отличную репутацию среди потребителей и производителей промышленного оборудования Украины, России, Европы, США. Номенклатура, предлагаемая нашим предприятием, включает в себя электродвигатели, низковольтную технику, преобразователи частоты, устройства управления и многое другое.<br>
+          </p>
+          <ul class="footerBottomLeft">
+            <li class="phoneFooter"><i class="fa fa-phone"></i><a href="tel:380445372992">38 044 5372992</a></li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-facebook"></i></a> </li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-pinterest"></i></a> </li>
+            <li class="moreContactFooter"><a href="/kontakty.html">Наши контакты <i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footerTitle">Больше информации</h3>
+          <div class="menu-footer-meer-info-container">
+            <ul id="menu-footer-meer-info" class="menu">
+              <li id="menu-item-5495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5495"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-vemz.html">Электродвигатели ВЭМЗ </a></li>
+              <li id="menu-item-6396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6396"><a href="#/inspiratiemagazine-aanvragen/">Электродвигатели ABB </a></li>
+              <li id="menu-item-5497" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5497"><a href="https://lbu.com.ua/produktsiya/elektricheskie-dvigateli-nkemz.html">Электродвигатели НКЭМЗ </a></li>
+              <li id="menu-item-6470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6470"><a href="https://lbu.com.ua/produktsiya/preobrazovateli-chastoty-keb.html">Преобразователи частоты KEB</a></li>
+              <li id="menu-item-5494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5494"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-omec-motors.html">Электродвигатели OMEC Motors</a></li>
+              <li id="menu-item-5496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5496"><a href="/">Преобразователи частоты ABB</a></li>
+            </ul>
+          </div>
+          <a class="Btn footerBtn" data-hover="Задать вопрос" href="/">Задать вопрос</a> <a class="Btn greyBtn footerBtn" data-hover="Обратная связь" href="https://lbu.com.ua/kontakty.html">Обратная связь</a> </div>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <div class="inner">
+        <div class="menu-footerbottom-container">
+<ul id="menu-footerbottom" class="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Киев: <a href="tel:+380445372992">+380 (44) 537-2992</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Новая Каховка: <a href="tel:+380554953783">+380 (5549) 53-783</a></li>
+</ul>
+</div>
+
+        <a href="https:/www.smart-support.com.ua/" class="copyright">Разработка сайта Smart Support.</a><span> © 2006-2019 ООО "ЛБЮ-Тех"</span> </div>
+    </div>
+  </footer>
+</div>
+<!-- end SiteWrap -->
+
+<div style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" id="outdated">
+  <h6>Ваш браузер устарел!</h6>
+  <p>Обновите свой браузер, чтобы в полной мере насладиться этим веб-сайт (и многими другими) <a style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);" id="btnUpdateBrowser" href="https://outdatedbrowser.com/">Обновить!</a></p>
+  <p class="last"><a style="color: rgb(255, 255, 255);" href="#" id="btnCloseUpdateBrowser" title="Закрыть">×</a></p>
+</div>
+<script type="text/javascript" src="/templates/lbu2016/js/scripts_002.js"></script> 
+<script type="text/javascript" src="/templates/lbu2016/js/main.js"></script>
+</body>
+</html>
+
+
+Previous part: <!DOCTYPE html>
+<!--[if lt IE 7]><html lang="nl" prefix="og: http:/ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="nl" prefix="og: http:/ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="nl" prefix="og: http:/ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<base href="https://lbu.com.ua/" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="электромотор, электродвигатель, мотор редуктор, асинхронный электродвигатель" />
+	<meta name="description" content="ООО ЛБЮ-тех предлагает купить электродвигатель, электромотор, мотор-редуктор а так же преобразователи частоты." />
+	<title>Электромоторы и электродвигатели от ведущего поставщика в Украине - ЛБЮ-Тех - оборудование и инжиниринг</title>
+	<link href="/templates/lbu2016/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<style type="text/css">
+div.mod_search102 input[type="search"]{ width:auto; }
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+	<script src="/plugins/system/jqueryeasy/jquerynoconflict.js" type="text/javascript"></script>
+	<script src="/media/system/js/caption.js?688d5a3622a6a3ef926bf97adb5e2f02" type="text/javascript"></script>
+	
+	
+	
+	<script src="/media/system/js/html5fallback.js" type="text/javascript"></script>
+	<script type="text/javascript">
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+	</script>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!--[if IE]><![endif]-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https:/fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+<link href="https:/fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+<link rel="apple-touch-icon-precomposed" href="#/library/icon/57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="#/library/icon/72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="#/library/icon/114.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="#/library/icon/144.png">
+<link rel="shortcut icon" type="image/x-icon" href="#/library/icon/favicon.ico">
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#343434">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#343434">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!--[if IE]>
+		<link rel="shortcut icon" href="#/library/icon/favicon.ico">
+	<![endif]-->
+
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link rel="stylesheet" href="/templates/lbu2016/css/font-awesome.css">
+<link rel="stylesheet" id="sitecss1-css" href="/templates/lbu2016/css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecss2-css" href="/templates/lbu2016/css/grid.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecss5-css" href="/templates/lbu2016/css/flexslider.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecss6-css" href="/templates/lbu2016/css/global.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecss7-css" href="/templates/lbu2016/css/menu.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecss-css" href="/templates/lbu2016/css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecss-css" href="/templates/lbu2016/css/forms.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecssX-css" href="/templates/lbu2016/css/retina.css" type="text/css" media="all">
+<link rel="stylesheet" id="sitecssY-css" href="/templates/lbu2016/css/responsive.css" type="text/css" media="all">
+
+<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="/templates/lbu2016/css/ie.css" />
+	<![endif]-->
+
+</head>
+<body class="home page-template-homepage page-template-homepage-php page page-template">
+<div class="mobileMenu"> <a class="menuToggle menuToggleOpened">
+  <div class="mtBars">
+    <div class="mtBar mtBarTop"></div>
+    <div class="mtBar mtBarBottom"></div>
+  </div>
+  </a>
+  		<div class="moduletable">
+						<ul class="nav menu mod-list">
+<li class="item-107"><a href="/kontakty.html" >Контакты</a></li><li class="item-101 default current active"><a href="/" >Главная</a></li><li class="item-108"><a href="/about-us.html" >О компании</a></li><li class="item-105 divider deeper parent"><span class="separator ">Продукция</span>
+<ul class="nav-child unstyled small"><li class="item-127 deeper parent"><a href="/produktsiya/elektrodvigateli-vemz.html" >Электродвигатели ВЭМЗ</a><ul class="nav-child unstyled small"><li class="item-149"><a href="/produktsiya/elektrodvigateli-vemz/vzryvozashchishchennye-vemz.html" >Взрывозащищенные</a></li><li class="item-150"><a href="/produktsiya/elektrodvigateli-vemz/obshchepromyshlennye-vemz.html" >Общепромышленные</a></li></ul></li><li class="item-222 deeper parent"><a href="/produktsiya/elektrodvigateli-abb.html" >Электродвигатели ABB</a><ul class="nav-child unstyled small"><li class="item-223"><a href="/produktsiya/elektrodvigateli-abb/nizkovoltnye-elektrodvigateli-abb-obshchego-naznacheniya.html" >Низковольтные электродвигатели ABB общего назначения</a></li></ul></li><li class="item-128 deeper parent"><a href="/produktsiya/elektrodvigateli-sez.html" >Электрические двигатели СЭЗ</a><ul class="nav-child unstyled small"><li class="item-153"><a href="/produktsiya/elektrodvigateli-sez/nomenklatura-sez.html" >Номенклатура СЭЗ</a></li></ul></li><li class="item-129 deeper parent"><a href="/produktsiya/elektricheskie-dvigateli-nkemz.html" >Электродвигатели НКЭМЗ</a><ul class="nav-child unstyled small"><li class="item-151"><a href="/produktsiya/elektricheskie-dvigateli-nkemz/vzryvozashchishchennye.html" >Взрывозащищенные</a></li><li class="item-152"><a href="/produktsiya/elektricheskie-dvigateli-nkemz/obshchepromyshlennye.html" >Общепромышленные</a></li></ul></li><li class="item-130"><a href="/produktsiya/elektrodvigateli-omec-motors.html" >Электродвигатели OMEC Motors</a></li><li class="item-132"><a href="/produktsiya/elektromagnitnaya-tekhnika-keb.html" >Электромагнитная техника KEB</a></li><li class="item-133"><a href="/produktsiya/motor-reduktory-keb.html" >Мотор-редукторы KEB</a></li><li class="item-134"><a href="/produktsiya/silikonovaya-rezina.html" >Силиконовая резина</a></li><li class="item-243 deeper parent"><a href="/produktsiya/preobrazovateli-chastoty.html" >Преобразователи частоты</a><ul class="nav-child unstyled small"><li class="item-131 deeper parent"><a href="/produktsiya/preobrazovateli-chastoty/preobrazovateli-chastoty-keb.html" >Преобразователи частоты KEB</a><ul class="nav-child unstyled small"><li class="item-166"><a href="/produktsiya/preobrazovateli-chastoty/preobrazovateli-chastoty-keb/seriya-basic.html" >Серия «Basic»</a></li><li class="item-167"><a href="/produktsiya/preobrazovateli-chastoty/preobrazovateli-chastoty-keb/seriya-compact.html" >Серия «Compact»</a></li><li class="item-168"><a href="/produktsiya/preobrazovateli-chastoty/preobrazovateli-chastoty-keb/seriya-application.html" >Серия «Application»</a></li></ul></li><li class="item-278"><a href="/produktsiya/preobrazovateli-chastoty/preobrazovateli-chastoty-abb.html" >Преобразователи частоты ABB</a></li></ul></li><li class="item-244 deeper parent"><a href="/produktsiya/svetodiodnoe-osveshchenie.html" >Светодиодное освещение</a><ul class="nav-child unstyled small"><li class="item-264"><a href="/produktsiya/svetodiodnoe-osveshchenie/seriya-modul.html" >Серия &quot;Модуль&quot;</a></li><li class="item-265"><a href="/produktsiya/svetodiodnoe-osveshchenie/seriya-modul-magistral.html" >Серия &quot;Модуль Магистраль&quot;</a></li><li class="item-266"><a href="/produktsiya/svetodiodnoe-osveshchenie/seriya-modul-prozhektor.html" >Серия &quot;Модуль Прожектор&quot;</a></li><li class="item-267"><a href="/produktsiya/svetodiodnoe-osveshchenie/seriya-modul-galochka.html" >Серия &quot;Модуль Галочка&quot;</a></li></ul></li><li class="item-250"><a href="/produktsiya/elektrodvigateli.html" >Электродвигатели</a></li></ul></li><li class="item-277 deeper parent"><a href="/inzhiniring-i-servis.html" >Инжиниринг и сервис</a><ul class="nav-child unstyled small"><li class="item-148 deeper parent"><a href="/inzhiniring-i-servis/servis.html" >Сервис</a><ul class="nav-child unstyled small"><li class="item-193"><a href="/inzhiniring-i-servis/servis/remont-promyshlennoj-elektroniki.html" >Ремонт промышленной электроники</a></li><li class="item-194"><a href="/inzhiniring-i-servis/servis/remont-elektronnykh-i-elektroizmeritelnykh-priborov.html" >Ремонт электронных и электроизмерительных приборов</a></li><li class="item-332"><a href="/inzhiniring-i-servis/servis/remont-chastotnykh-preobrazovatelej.html" >Ремонт частотных преобразователей</a></li></ul></li><li class="item-106 deeper parent"><a href="/inzhiniring-i-servis/inzhiniring.html" >Инжиниринг</a><ul class="nav-child unstyled small"><li class="item-171"><a href="/inzhiniring-i-servis/inzhiniring/poluavtomat-spetsialnyj-zlks12.html" >Полуавтомат специальный ЗЛКС12</a></li><li class="item-195"><a href="/inzhiniring-i-servis/inzhiniring/vosstanovlenie-modernizatsiya-metallorezhushchikh-stankov.html" >Восстановление, модернизация металлорежущих станков</a></li><li class="item-196"><a href="/inzhiniring-i-servis/inzhiniring/stend-dlya-ispytaniya-transmissii-vertoleta-mi-8.html" >Стенд для испытания трансмиссии вертолета МИ-8</a></li><li class="item-136"><a href="/inzhiniring-i-servis/inzhiniring/stanochnyj-elektroprivod.html" >Станочный электропривод</a></li><li class="item-197"><a href="/inzhiniring-i-servis/inzhiniring/razrabotka-i-izgotovlenie-galvanicheskikh-ustanovok.html" >Разработка и изготовление гальванических установок</a></li></ul></li></ul></li><li class="item-169 divider deeper parent"><span class="separator ">Качество</span>
+<ul class="nav-child unstyled small"><li class="item-170"><a href="/kachestvo/kitajskie-elektrodvigateli-gde-podvokh.html" >Дешевые электродвигатели. Где подвох?</a></li><li class="item-172"><a href="/kachestvo/preimushchestva-dvigatelej-vemz.html" >Преимущества двигателей ВЭМЗ</a></li></ul></li><li class="item-117"><a href="/otpravit-zapros.html" >Отправить запрос</a></li><li class="item-125"><a href="/novosti.html" >Новости</a></li><li class="item-126"><a href="/sertifikaty.html" >Сертификаты</a></li><li class="item-213"><a href="/stati.html" >Статьи</a></li></ul>
+		</div>
+	
+  <div class="socialIconsMobile"> <a href="https:/www.facebook.com/" class="socialIconMobile socialIconFb"><i class="fa fa-facebook-square"></i></a> <a href="/" class="socialIconMobile socialIconPin"><i class="fa fa-pinterest"></i></a> </div>
+</div>
+<div class="menuBar clearfix">
+  <div class="inner"> <a class="logo" href="https://lbu.com.ua" rel="nofollow"><img src="/templates/lbu2016/images/logo.svg" alt="Home"></a>
+    <div class="menuWrapper clearfix">
+      		<div class="moduletable topMenu">
+						<ul class="nav menu menu-topmenu-container mod-list">
+<li class="item-322"><a href="/catalog.html" >Каталог</a></li><li class="item-236"><a href="/about-us.html" >О компании</a></li><li class="item-279"><a href="/stati.html" >Статьи</a></li><li class="item-237"><a href="/kontakty.html" >Контакты</a></li></ul>
+		</div>
+	
+      		<div class="moduletable mainMenu">
+						<ul class="nav menumenu top-nav clearfix mod-list" id="menu-hoofdmenu-1">
+<li class="item-241"><a href="/inzhiniring-i-servis.html" >Инжиниринг и сервис</a></li><li class="item-238"><a href="/produktsiya/elektrodvigateli.html" >Электродвигатели</a></li><li class="item-239"><a href="/produktsiya/preobrazovateli-chastoty.html" >Преобразователи частоты</a></li><li class="item-240"><a href="/produktsiya/svetodiodnoe-osveshchenie.html" >LED освещение</a></li><li class="item-242"><a href="/kremnijorganicheskaya-rezina.html" >Силиконовая резина</a></li></ul>
+		</div>
+	
+    </div>
+    <div class="searchWrapper">
+      <div class="menuSearch">
+        <p>Киев <span>044 537 2992</span></p>
+        <a class="searchToggle"><i class="fa fa-search searchOff"></i><i class="fa fa-times searchOn"></i></a> </div>
+    </div>
+    <a class="menuToggle">
+    <div class="mtBars">
+      <div class="mtBar mtBarTop"></div>
+      <div class="mtBar mtBarBottom"></div>
+    </div>
+    </a> <a href="tel:044 537 2992" class="phoneToggleResponsive"> <i class="fa fa-phone"></i> </a> </div>
+  <div class="searchDropdown">
+3f4b
+
+    
+	<form action="/" method="post" id="searchform" class="searchForm" role="search" style="display: none;"><div>
+		<input name="searchword" id="mod-search-searchword s" maxlength="200"  class="inputbox search-query searchInput" type="search" size="20" placeholder="Поиск..." />		<input type="hidden" name="task" value="search" />
+		<input type="hidden" name="option" value="com_search" />
+		<input type="hidden" name="Itemid" value="101" />
+        <button id="searchsubmit" class="searchBtn" type="submit"><i class="fa fa-search"></i></button></div>
+	</form>
+
+
+  </div>
+</div>
+<div class="siteWrap">
+<div class="container">
+  <div class="innerContainer">
+    <div class="wrapper">
+            <div class="header">
+        <div id="homeSlider" class="flexslider">
+          <ul class="slides">
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_2-1-150x150.jpg ">
+              <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/headers/slider1.jpg);">
+                <div class="slideInner">
+                  <h5 class="homeSlideSubTitle"><b>На основе применения энергоэффективных технологий и оборудования мы обеспечиваем нашим клиентам:</b><br>
+                    <br>
+                    - снижение энергопотребления<br>
+                    - снижение себестоимости выпускаемой продукции<br>
+                    - увеличение производительности производственных мощностей<br>
+                    - повышение качества и надёжности</h5>
+                </div>
+              </div>
+            </li>
+            <!--<li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" data-thumb="#02/home_3-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>
+              <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_1-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>-->
+          </ul>
+          <ol class="flex-control-nav flex-control-paging">
+            <li><a class="">1</a></li>
+            <li><a class="flex-active">2</a></li>
+            <li><a class="">3</a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner"> </div>
+        <div class="homeBlocks cols cols-4">
+          <div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/inzhiniring-i-servis.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/inginiring.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Инжиниринг</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Комплекс предложений для Вашего предприятия!
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/elektrodvigateli.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/block1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Энергоэффективные электродвигатели</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Максимальная производительность - минимальные энергозастраты!
+<p data-hover="Подробнее" class="Btn homeBlockBtn"><span class="before">Подробнее</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/preobrazovateli-chastoty.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/84-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Преобразователи частоты</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Уменьшим потребление электроенергии на предприятии!
+<p data-hover="Узнать подробности" class="Btn homeBlockBtn"><span class="before">Узнать подробности</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/svetodiodnoe-osveshchenie.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/47-1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Светодиодное освещение</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Кратная информация
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+
+        </div>
+        <div class="content">
+          <div class="inner">
+            <div class="item-page" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="ru-RU" />
+	
+		
+						
+		
+	
+	
+		
+									<div itemprop="articleBody">
+		<p><span style="text-decoration: underline;"><em><strong>Мы предлагаем комплексное бесплатное техническое аудиторское решение, направленное на обеспечение энергосбережения предприятия.</strong></em></span></p>
+<ul>
+<li>Мы исследуем каждый электродвигатель, электромотор на Вашем предприятии и рассчитаем экономический эффект по экономии электроэнергии от внедрения энергоэффективных электродвигателей.<br />Вы можете у нас купить энергоэффективные <strong>электродвигатели</strong> производства <strong>OMEC MOTORS (Нидерланды), ABB (Швеция), концерн «РУСЭЛПРОМ» (Россия)</strong> и других производителей.</li>
+<li>Мы делаем расчёт и, при необходимости, предлагаем замену существующей перекачивающей станции или вентиляционной системы на оборудование, в которое входит преобразователь частоты и энергоэффективный электродвигатель. После расчёта Вы получаете данные об экономическом эффекте от внедрения данного привода.<br />Вы можете у нас купить высококачественные <strong>преобразователи частоты КЕВ (Германия), АВВ (Швеция)</strong> и других производителей.</li>
+<li>Мы делаем расчёт замены существующего освещения на светодиодные светильники и рассчитываем экономический эффект от их внедрения.<br />Вы можете у нас купить <strong>светодиодные светильники</strong> торговой марки <strong>VILED (совместное производство Украина – Россия)</strong>.</li>
+<li>Мы располагаем необходимыми материально-техническими ресурсами и специалистами высокой квалификации, постоянно проходящими обучение в Германии с большим опытом работы в проектировании электроприводов, систем автоматики и модернизации оборудования<br />После бесплатной диагностики мы производим качественный <strong>ремонт</strong> любых <strong>преобразователей частоты и блоков питания</strong>;</li>
+</ul>
+<p>На взаимовыгодных условиях мы обеспечиваем нашим клиентам <span style="text-decoration: underline;">сокращение затрат на электроэнергию, уменьшение себестоимости, увеличение производительности и надежности выпускаемой продукции</span> на основе применения энергоэффективных электродвигателей, преобразователей частоты и создания энергоэффективного оборудования.</p> 	</div>
+
+	
+							</div>
+
+          </div>
+        </div>
+                      </div>
+      
+      <!-- End Wrapper --> 
+    </div>
+  </div>
+  <!-- end Container -->
+  <footer class="footer">
+    <div class="inner clearfix darkBg">
+      <div class="cols cols-2">
+        <div>
+          <h3 class="footerTitle">ЛБЮ-тех</h3>
+          <p class="footerDesc">ООО «ЛБЮ - Тех» с 2000 года является одним из ведущих поставщиков электротехнического оборудования в Украине. Благодаря высокому качеству поставляемой продукции и четкому выполнению своих обязательств ООО "ЛБЮ - Тех" приобрело широкую известность и отличную репутацию среди потребителей и производителей промышленного оборудования Украины, России, Европы, США. Номенклатура, предлагаемая нашим предприятием, включает в себя электродвигатели, низковольтную технику, преобразователи частоты, устройства управления и многое другое.<br>
+          </p>
+          <ul class="footerBottomLeft">
+            <li class="phoneFooter"><i class="fa fa-phone"></i><a href="tel:380445372992">38 044 5372992</a></li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-facebook"></i></a> </li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-pinterest"></i></a> </li>
+            <li class="moreContactFooter"><a href="/kontakty.html">Наши контакты <i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footerTitle">Больше информации</h3>
+          <div class="menu-footer-meer-info-container">
+            <ul id="menu-footer-meer-info" class="menu">
+              <li id="menu-item-5495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5495"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-vemz.html">Электродвигатели ВЭМЗ </a></li>
+              <li id="menu-item-6396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6396"><a href="#/inspiratiemagazine-aanvragen/">Электродвигатели ABB </a></li>
+              <li id="menu-item-5497" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5497"><a href="https://lbu.com.ua/produktsiya/elektricheskie-dvigateli-nkemz.html">Электродвигатели НКЭМЗ </a></li>
+              <li id="menu-item-6470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6470"><a href="https://lbu.com.ua/produktsiya/preobrazovateli-chastoty-keb.html">Преобразователи частоты KEB</a></li>
+              <li id="menu-item-5494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5494"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-omec-motors.html">Электродвигатели OMEC Motors</a></li>
+              <li id="menu-item-5496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5496"><a href="/">Преобразователи частоты ABB</a></li>
+            </ul>
+          </div>
+          <a class="Btn footerBtn" data-hover="Задать вопрос" href="/">Задать вопрос</a> <a class="Btn greyBtn footerBtn" data-hover="Обратная связь" href="https://lbu.com.ua/kontakty.html">Обратная связь</a> </div>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <div class="inner">
+        <div class="menu-footerbottom-container">
+<ul id="menu-footerbottom" class="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Киев: <a href="tel:+380445372992">+380 (44) 537-2992</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Новая Каховка: <a href="tel:+380554953783">+380 (5549) 53-783</a></li>
+</ul>
+</div>
+
+        <a href="https:/www.smart-support.com.ua/" class="copyright">Разработка сайта Smart Support.</a><span> © 2006-2019 ООО "ЛБЮ-Тех"</span> </div>
+    </div>
+  </footer>
+</div>
+<!-- end SiteWrap -->
+
+<div style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" id="outdated">
+  <h6>Ваш браузер устарел!</h6>
+  <p>Обновите свой браузер, чтобы в полной мере насладиться этим веб-сайт (и многими другими) <a style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);" id="btnUpdateBrowser" href="https://outdatedbrowser.com/">Обновить!</a></p>
+  <p class="last"><a style="color: rgb(255, 255, 255);" href="#" id="btnCloseUpdateBrowser" title="Закрыть">×</a></p>
+</div>
+<script type="text/javascript" src="/templates/lbu2016/js/scripts_002.js"></script> 
+<script type="text/javascript" src="/templates/lbu2016/js/main.js"></script>
+</body>
+</html>
+
+
+Recalc says: 14522, 16203
+String to recalc: 
+3f4b
+
+    
+	<form action="/" method="post" id="searchform" class="searchForm" role="search" style="display: none;"><div>
+		<input name="searchword" id="mod-search-searchword s" maxlength="200"  class="inputbox search-query searchInput" type="search" size="20" placeholder="Поиск..." />		<input type="hidden" name="task" value="search" />
+		<input type="hidden" name="option" value="com_search" />
+		<input type="hidden" name="Itemid" value="101" />
+        <button id="searchsubmit" class="searchBtn" type="submit"><i class="fa fa-search"></i></button></div>
+	</form>
+
+
+  </div>
+</div>
+<div class="siteWrap">
+<div class="container">
+  <div class="innerContainer">
+    <div class="wrapper">
+            <div class="header">
+        <div id="homeSlider" class="flexslider">
+          <ul class="slides">
+            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_2-1-150x150.jpg ">
+              <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/headers/slider1.jpg);">
+                <div class="slideInner">
+                  <h5 class="homeSlideSubTitle"><b>На основе применения энергоэффективных технологий и оборудования мы обеспечиваем нашим клиентам:</b><br>
+                    <br>
+                    - снижение энергопотребления<br>
+                    - снижение себестоимости выпускаемой продукции<br>
+                    - увеличение производительности производственных мощностей<br>
+                    - повышение качества и надёжности</h5>
+                </div>
+              </div>
+            </li>
+            <!--<li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" data-thumb="#02/home_3-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>
+              <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" data-thumb="#02/home_1-1-150x150.jpg ">
+                <div class="slideContent" style="background-image: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url(images/slider1.jpg);">
+                  <div class="slideInner">
+                    <h3 class="homeSlideTitle">Энергоэффективность предприятий</h3>
+                    <h5 class="homeSlideSubTitle">Какой-то тезис о которых мы говорили!</h5>
+                  </div>
+                </div>
+              </li>-->
+          </ul>
+          <ol class="flex-control-nav flex-control-paging">
+            <li><a class="">1</a></li>
+            <li><a class="flex-active">2</a></li>
+            <li><a class="">3</a></li>
+          </ol>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner"> </div>
+        <div class="homeBlocks cols cols-4">
+          <div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/inzhiniring-i-servis.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/inginiring.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Инжиниринг</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Комплекс предложений для Вашего предприятия!
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/elektrodvigateli.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/block1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Энергоэффективные электродвигатели</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Максимальная производительность - минимальные энергозастраты!
+<p data-hover="Подробнее" class="Btn homeBlockBtn"><span class="before">Подробнее</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/preobrazovateli-chastoty.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/84-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Преобразователи частоты</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Уменьшим потребление электроенергии на предприятии!
+<p data-hover="Узнать подробности" class="Btn homeBlockBtn"><span class="before">Узнать подробности</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+<div><a style="height: 428px;" class="homeBlock homeBlockWhite" href="/produktsiya/svetodiodnoe-osveshchenie.html">
+<div class="homeBlockImage">
+<div class="homeBlockImageOverlay" style="background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) );">&nbsp;</div>
+<img class="homeBlockImgSrc" alt="" src="/images/mainblocks/47-1-590x485.jpg" /></div>
+<div class="homeBlockHover">
+<div class="homeBlockContent">
+<h2 style="color: #fff;" class="homeBlockTitle">Светодиодное освещение</h2>
+<h5 style="color: #fff;" class="homeBlockSubTitle">Кратная информация
+<p data-hover="Смотреть каталог" class="Btn homeBlockBtn"><span class="before">Смотреть каталог</span></p>
+</h5>
+</div>
+</div>
+</a></div>
+
+        </div>
+        <div class="content">
+          <div class="inner">
+            <div class="item-page" itemscope itemtype="https://schema.org/Article">
+	<meta itemprop="inLanguage" content="ru-RU" />
+	
+		
+						
+		
+	
+	
+		
+									<div itemprop="articleBody">
+		<p><span style="text-decoration: underline;"><em><strong>Мы предлагаем комплексное бесплатное техническое аудиторское решение, направленное на обеспечение энергосбережения предприятия.</strong></em></span></p>
+<ul>
+<li>Мы исследуем каждый электродвигатель, электромотор на Вашем предприятии и рассчитаем экономический эффект по экономии электроэнергии от внедрения энергоэффективных электродвигателей.<br />Вы можете у нас купить энергоэффективные <strong>электродвигатели</strong> производства <strong>OMEC MOTORS (Нидерланды), ABB (Швеция), концерн «РУСЭЛПРОМ» (Россия)</strong> и других производителей.</li>
+<li>Мы делаем расчёт и, при необходимости, предлагаем замену существующей перекачивающей станции или вентиляционной системы на оборудование, в которое входит преобразователь частоты и энергоэффективный электродвигатель. После расчёта Вы получаете данные об экономическом эффекте от внедрения данного привода.<br />Вы можете у нас купить высококачественные <strong>преобразователи частоты КЕВ (Германия), АВВ (Швеция)</strong> и других производителей.</li>
+<li>Мы делаем расчёт замены существующего освещения на светодиодные светильники и рассчитываем экономический эффект от их внедрения.<br />Вы можете у нас купить <strong>светодиодные светильники</strong> торговой марки <strong>VILED (совместное производство Украина – Россия)</strong>.</li>
+<li>Мы располагаем необходимыми материально-техническими ресурсами и специалистами высокой квалификации, постоянно проходящими обучение в Германии с большим опытом работы в проектировании электроприводов, систем автоматики и модернизации оборудования<br />После бесплатной диагностики мы производим качественный <strong>ремонт</strong> любых <strong>преобразователей частоты и блоков питания</strong>;</li>
+</ul>
+<p>На взаимовыгодных условиях мы обеспечиваем нашим клиентам <span style="text-decoration: underline;">сокращение затрат на электроэнергию, уменьшение себестоимости, увеличение производительности и надежности выпускаемой продукции</span> на основе применения энергоэффективных электродвигателей, преобразователей частоты и создания энергоэффективного оборудования.</p> 	</div>
+
+	
+							</div>
+
+          </div>
+        </div>
+                      </div>
+      
+      <!-- End Wrapper --> 
+    </div>
+  </div>
+  <!-- end Container -->
+  <footer class="footer">
+    <div class="inner clearfix darkBg">
+      <div class="cols cols-2">
+        <div>
+          <h3 class="footerTitle">ЛБЮ-тех</h3>
+          <p class="footerDesc">ООО «ЛБЮ - Тех» с 2000 года является одним из ведущих поставщиков электротехнического оборудования в Украине. Благодаря высокому качеству поставляемой продукции и четкому выполнению своих обязательств ООО "ЛБЮ - Тех" приобрело широкую известность и отличную репутацию среди потребителей и производителей промышленного оборудования Украины, России, Европы, США. Номенклатура, предлагаемая нашим предприятием, включает в себя электродвигатели, низковольтную технику, преобразователи частоты, устройства управления и многое другое.<br>
+          </p>
+          <ul class="footerBottomLeft">
+            <li class="phoneFooter"><i class="fa fa-phone"></i><a href="tel:380445372992">38 044 5372992</a></li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-facebook"></i></a> </li>
+            <li class="socialIcon socialIconFooter"> <a href="/"><i class="fa fa-pinterest"></i></a> </li>
+            <li class="moreContactFooter"><a href="/kontakty.html">Наши контакты <i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footerTitle">Больше информации</h3>
+          <div class="menu-footer-meer-info-container">
+            <ul id="menu-footer-meer-info" class="menu">
+              <li id="menu-item-5495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5495"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-vemz.html">Электродвигатели ВЭМЗ </a></li>
+              <li id="menu-item-6396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6396"><a href="#/inspiratiemagazine-aanvragen/">Электродвигатели ABB </a></li>
+              <li id="menu-item-5497" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5497"><a href="https://lbu.com.ua/produktsiya/elektricheskie-dvigateli-nkemz.html">Электродвигатели НКЭМЗ </a></li>
+              <li id="menu-item-6470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6470"><a href="https://lbu.com.ua/produktsiya/preobrazovateli-chastoty-keb.html">Преобразователи частоты KEB</a></li>
+              <li id="menu-item-5494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5494"><a href="https://lbu.com.ua/produktsiya/elektrodvigateli-omec-motors.html">Электродвигатели OMEC Motors</a></li>
+              <li id="menu-item-5496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5496"><a href="/">Преобразователи частоты ABB</a></li>
+            </ul>
+          </div>
+          <a class="Btn footerBtn" data-hover="Задать вопрос" href="/">Задать вопрос</a> <a class="Btn greyBtn footerBtn" data-hover="Обратная связь" href="https://lbu.com.ua/kontakty.html">Обратная связь</a> </div>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <div class="inner">
+        <div class="menu-footerbottom-container">
+<ul id="menu-footerbottom" class="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Киев: <a href="tel:+380445372992">+380 (44) 537-2992</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page">Новая Каховка: <a href="tel:+380554953783">+380 (5549) 53-783</a></li>
+</ul>
+</div>
+
+        <a href="https:/www.smart-support.com.ua/" class="copyright">Разработка сайта Smart Support.</a><span> © 2006-2019 ООО "ЛБЮ-Тех"</span> </div>
+    </div>
+  </footer>
+</div>
+<!-- end SiteWrap -->
+
+<div style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" id="outdated">
+  <h6>Ваш браузер устарел!</h6>
+  <p>Обновите свой браузер, чтобы в полной мере насладиться этим веб-сайт (и многими другими) <a style="color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);" id="btnUpdateBrowser" href="https://outdatedbrowser.com/">Обновить!</a></p>
+  <p class="last"><a style="color: rgb(255, 255, 255);" href="#" id="btnCloseUpdateBrowser" title="Закрыть">×</a></p>
+</div>
+<script type="text/javascript" src="/templates/lbu2016/js/scripts_002.js"></script> 
+<script type="text/javascript" src="/templates/lbu2016/js/main.js"></script>
+</body>
+</html>
+
+
+String to recalc after correction: 
+
+Next part beggining 
+
+The number of crlf 1
+err 1
+
+Error: chunk length data is not complete
+Reading more1... 
+Next part beggining 
+0
+
+
+The number of crlf 3
+err 0
+Initial offset corrector: 0
+chunk_bytes_to_read HEX 0Recalc says: 30730, 0
+String to recalc: 
+0
+
+
+String to recalc after correction: 
+
+Next part beggining 
+
+The number of crlf 1
+err 1
+
+Error: chunk length data is not complete
+Reading more1... 
+Read failed: End of file
