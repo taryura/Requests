@@ -2932,7 +2932,7 @@
 1493488838 d:\wxwidgets-3.0.3\include\wx\cocoa\mdi.h
 	"wx/frame.h"
 
-1548856631 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
+1549631582 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
 	"wxGUI2.h"
 	"sslrequest.h"
 	"httprequest.h"
@@ -11790,13 +11790,14 @@
 1522067763 source:d:\c++ projects\Новая папка\requests\src\toolbars.cpp
 	"wxGUI2.h"
 
-1520811998 source:d:\c++ projects\Новая папка\requests\wxgui2.cpp
+1549632110 source:d:\c++ projects\Новая папка\requests\wxgui2.cpp
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1549550724 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1549634828 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
 	"parse_chunk.h"
+	"parse_head.h"
 	"boost/lexical_cast.hpp"
 
 1549553177 d:\c++ projects\Новая папка\requests\include\a_requests.h
@@ -11854,10 +11855,11 @@
 1548779099 source:d:\c++ projects\Новая папка\requests\src\input_validator.cpp
 	"input_validator.h"
 
-1549552021 source:d:\c++ projects\Новая папка\requests\src\parse_chunk.cpp
+1549635019 source:d:\c++ projects\Новая папка\requests\src\parse_chunk.cpp
 	"parse_chunk.h"
 
-1549478069 d:\c++ projects\Новая папка\requests\include\parse_chunk.h
+1549634967 d:\c++ projects\Новая папка\requests\include\parse_chunk.h
+	"reply_parser.h"
 	<iostream>
 
 1514338442 d:\boost_66_installed\include\boost-1_66\boost\lexical_cast.hpp
@@ -13930,4 +13932,11 @@
 1514338467 d:\boost_66_installed\include\boost-1_66\boost\detail\basic_pointerbuf.hpp
 	"boost/config.hpp"
 	<streambuf>
+
+1549635311 d:\c++ projects\Новая папка\requests\include\reply_parser.h
+	<iostream>
+
+1549634967 d:\c++ projects\Новая папка\requests\include\parse_head.h
+	"reply_parser.h"
+	<iostream>
 

@@ -19,18 +19,10 @@ determined in the chunk header
 
 #include "parse_chunk.h"
 
-parse_chunk::parse_chunk ()
+/*parse_chunk::parse_chunk ()
 {
 
-}
-
-parse_chunk::parse_chunk(const std::string &response1, int a)
-{
-   header = response1;
-   next_chunk = chop_head(header, (header.find("\r\n\r\n")+4));
-   err = retrieve_chunk_size();
-
-}
+}*/
 
 parse_chunk::parse_chunk (const std::string &reply2, int *chunk_start_pointer, int *chunk_length, int &cpi)
 {
@@ -240,19 +232,7 @@ void parse_chunk::recalc2 (std::string reply2, int *chunk_start_pointer, int *ch
     std::cout << "Previous part: " << reply2.substr (chunk_start_pointer[cpi-1]) << std::endl;
 
     }
-    /*std::cout << "Recalc says: " << chunk_start_pointer[cpi] <<", "<< chunk_length[cpi] << std::endl;
-    cpi +=1;
-    std::cout << "String to recalc: " << string_to_recalc << std::endl;
-    string_to_recalc = string_to_recalc.substr(2+chunk_bytes_to_read.length() + 2 + chunk_bytes);
-    std::cout << "String to recalc after correction: " << string_to_recalc << std::endl;
-    parse (string_to_recalc);
 
-
-    chunk_start_pointer[cpi] = 100;
-    chunk_length[cpi] = 200;
-
-*/
-    //return 0;
 }
 
 bool parse_chunk::retrieve_chunk_size ()
@@ -289,39 +269,4 @@ int parse_chunk::hex_convert (const std::string &my_chunk)
     }
 }
 
-
-
-
-// finds and returns text right after the header "\r\n\r\n"
-std::string parse_chunk::chop_head (std::string my_chunk, int chunk_length)
-{
-    std::string string1 = my_chunk.substr(chunk_length, (my_chunk.length() - chunk_length));
-    return string1;
-}
-
-
-//finds and returns string which begins with str_to_find
-
-std::string parse_chunk::find_str (const std::string &str_to_find)
-{
-    a = header.find (str_to_find);
-
-    if (a !=-1){
-            std::string string2 = header.substr(a, header.length()-a);
-            a = string2.find ("\r\n");
-            std::string string3 = string2.substr(0, a);
-            err = 0;
-            return string3;
-    }
-    err = 1;
-    return "Cannon find element";
-}
-//returns the value after the colon
-std::string parse_chunk::find_val (const std::string &str_to_find)
-{
-    a = str_to_find.find (":")+2;
-    std::string string2 = str_to_find.substr(a, str_to_find.length()-a);
-
-    return string2;
-}
 

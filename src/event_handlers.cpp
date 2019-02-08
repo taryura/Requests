@@ -38,9 +38,15 @@ void wxGUI2Frame::OnSend(wxCommandEvent &event)
     std::string s_port = std::string(tc_value.mb_str());
     tc_value = tc_request->GetValue();
     std::string request1 = std::string(tc_value.mb_str());
-
+    request1 += "\r\n\r\n";
     //validation of port value
     input_validator check_result (s_port);
+
+    /*if (request1.find("\r\n\r\n") == -1){
+
+        wxMessageBox("Request header must end with at least two CRLF linebreaks. The content after the header may be ignored by server.", _("Error!"));
+        return;
+    }*/
 
     if (url_addr == ""){
         wxMessageBox("URL address should not be empty", _("Error!"));
@@ -48,8 +54,8 @@ void wxGUI2Frame::OnSend(wxCommandEvent &event)
         else if (s_port == "" or !check_result.integer_flag){
             wxMessageBox("Port should be 0 - 65535", _("Error!"));
         }
-            else if (request1 == ""){
-                wxMessageBox("Request field should not be empty and should end with two line breaks", _("Error!"));
+            else if (request1 == "\r\n\r\n"){
+                wxMessageBox("Request field should not be empty and should end with two line breaks.", _("Error!"));
             }
                 else {
                         SetStatusText(_("Sending request..."),2);

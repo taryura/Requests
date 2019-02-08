@@ -1,6 +1,7 @@
 #include "a_requests.h"
 //#include "head_type.h"
 #include "parse_chunk.h"
+#include "parse_head.h"
 
 //For debug purposes
 #include "boost/lexical_cast.hpp"
@@ -98,7 +99,7 @@ void client::handle_read(const boost::system::error_code& error,
       header_length = first_part.find ("\r\n\r\n");
 
       //parsing header
-      parse_chunk parsed_header (first_part, 1);
+      parse_head parsed_header (first_part);
 
       //reading till EOF if content length is determined.
       std::string string1 = parsed_header.find_str("Content-Length");
@@ -152,6 +153,7 @@ void client::handle_read(const boost::system::error_code& error,
         {
         //reading till EOF if neither the content-length
         //nor the chunked transfer defined (till HTML close tag)
+
         boost::asio::async_read_until(socket_,
             MyBuffer, "</html>",
             boost::bind(&client::handle_read_content, this,

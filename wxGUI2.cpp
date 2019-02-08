@@ -67,9 +67,9 @@ wxGUI2Frame::wxGUI2Frame(wxFrame *frame, const wxString& title)
 
     // create a status bar with some information about used wxWidgets version
     CreateStatusBar(3);
-    SetStatusText(_("Hello!"),0);
-    SetStatusText(wxbuildinfo(short_f), 1);
-    SetStatusText(_("Me again!"),2);
+    SetStatusText(_("Requests"),0);
+    SetStatusText(_("Ver. 0.2.1 Alpha"), 1);
+    SetStatusText(_("Ready"),2);
 
 }
 
