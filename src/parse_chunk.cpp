@@ -78,14 +78,14 @@ if (!err)
               {
                   if (!end_of_file)
                   {
-                  std::cout << "Reading more1... " << std::endl;
+                  std::cout << "Reading more1... \r\n" << std::endl;
 
                   return;
                   }
                   else
                   {
 
-                  std::cout << "\r\nEnd of file... " << std::endl;
+                  std::cout << "\r\nEnd of file... \r\n" << std::endl;
 
                   return;
                   }
@@ -228,8 +228,8 @@ void parse_chunk::recalc2 (std::string reply2, int *chunk_start_pointer, int *ch
 
     next_transfer_length = chunk_length[cpi] - (reply2.length() - chunk_start_pointer[cpi]);
     std::cout << "chunk_start_pointer " << cpi << ": " << chunk_start_pointer[cpi] << std::endl;
-    std::cout << "Next part: " << reply2.substr (chunk_start_pointer[cpi]) << std::endl;
-    std::cout << "Previous part: " << reply2.substr (chunk_start_pointer[cpi-1]) << std::endl;
+    //std::cout << "Next part: " << reply2.substr (chunk_start_pointer[cpi]) << std::endl;
+    //std::cout << "Previous part: " << reply2.substr (chunk_start_pointer[cpi-1]) << std::endl;
 
     }
 
@@ -241,7 +241,7 @@ bool parse_chunk::retrieve_chunk_size ()
    if (next_chunk.find("\r\n") != -1)
    {
    chunk_bytes_to_read = next_chunk.substr(0, next_chunk.find("\r\n"));
-   std::cout << "chunk_bytes_to_read HEX " << next_chunk.substr(0, next_chunk.find("\r\n"));
+   std::cout << "chunk_bytes_to_read HEX " << next_chunk.substr(0, next_chunk.find("\r\n")) << std::endl;
 
    chunk_bytes = hex_convert(chunk_bytes_to_read);
    if (chunk_bytes == -1){return 1;}

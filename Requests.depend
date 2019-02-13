@@ -11794,13 +11794,13 @@
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1549634828 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1550066600 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
 	"parse_chunk.h"
 	"parse_head.h"
 	"boost/lexical_cast.hpp"
 
-1549553177 d:\c++ projects\Новая папка\requests\include\a_requests.h
+1550066387 d:\c++ projects\Новая папка\requests\include\a_requests.h
 	<cstring>
 	<string>
 	<iostream>
@@ -11855,7 +11855,7 @@
 1548779099 source:d:\c++ projects\Новая папка\requests\src\input_validator.cpp
 	"input_validator.h"
 
-1549635019 source:d:\c++ projects\Новая папка\requests\src\parse_chunk.cpp
+1550065904 source:d:\c++ projects\Новая папка\requests\src\parse_chunk.cpp
 	"parse_chunk.h"
 
 1549634967 d:\c++ projects\Новая папка\requests\include\parse_chunk.h
@@ -13939,4 +13939,10 @@
 1549634967 d:\c++ projects\Новая папка\requests\include\parse_head.h
 	"reply_parser.h"
 	<iostream>
+
+1549635261 source:d:\c++ projects\Новая папка\requests\src\parse_head.cpp
+	"parse_head.h"
+
+1549633815 source:d:\c++ projects\Новая папка\requests\src\reply_parser.cpp
+	"reply_parser.h"
 

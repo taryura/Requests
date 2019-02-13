@@ -96,6 +96,8 @@ void client::handle_read(const boost::system::error_code& error,
       first_part = buff_to_string(MyBuffer);
       reply2 = first_part;
       //Length of the HTTP header
+      std::cout << "Reply2 after header read:\r\n\r\n " << reply2 << std::endl;
+
       header_length = first_part.find ("\r\n\r\n");
 
       //parsing header
@@ -146,6 +148,7 @@ void client::handle_read(const boost::system::error_code& error,
           chunk_length[cpi] = header_length + 2;
 
           //Delegating to chunk processing method
+          std::cout << "Reading next chunk after the header:\r\n\r\n " << std::endl;
           handle_read_chunk (error);
 
         }
@@ -175,7 +178,7 @@ void client::handle_read_chunk(const boost::system::error_code& error)
     if (!error)
     {
       reply2 += buff_to_string(MyBuffer);
-
+      std::cout << "Reply2:\r\n\r\n " << reply2 << std::endl;
 
       //parsing the chunk received
   try
@@ -186,6 +189,7 @@ void client::handle_read_chunk(const boost::system::error_code& error)
 
       if (next_chunk_beginning.end_of_file)
       {
+              std::cout << "End of file:\r\n\r\n " << reply2 << std::endl;
               return;
       }
 
@@ -195,6 +199,8 @@ void client::handle_read_chunk(const boost::system::error_code& error)
         //Reading more data if the length field is not fully transfered
         if (next_chunk_beginning.err or next_chunk_beginning.end_of_chunk)
         {
+            std::cout << "Reading till next clrf" << std::endl;
+
             boost::asio::async_read_until(socket_,
               MyBuffer, "\r\n",
               boost::bind(&client::handle_read_chunk, this,
@@ -205,8 +211,9 @@ void client::handle_read_chunk(const boost::system::error_code& error)
         //Reading next chunk if its length is determined
         else
         {
+            std::cout << "Reading next chunk: " << next_chunk_beginning.next_transfer_length << "Bytes" << std::endl;
             boost::asio::async_read(socket_, MyBuffer,
-            boost::asio::transfer_at_least(next_transfer_length),
+            boost::asio::transfer_at_least(next_chunk_beginning.next_transfer_length),
             boost::bind(&client::handle_read_chunk, this,
             boost::asio::placeholders::error));
         }
@@ -223,8 +230,8 @@ void client::handle_read_chunk(const boost::system::error_code& error)
       + "\r\n Debug " + "CHUNK_START_POINTER: "
       + boost::lexical_cast<std::string>(chunk_start_pointer[cpi])+ "\r\n"
       + "CH_LEN " + boost::lexical_cast<std::string>(chunk_length[cpi]) + "\r\n"
-      + "CPI= " + boost::lexical_cast<std::string>(cpi) + "\r\n"
-      + "Next transfer length: " + boost::lexical_cast<std::string>(next_transfer_length) + "\r\n";
+      + "CPI= " + boost::lexical_cast<std::string>(cpi) + "\r\n";
+      //+ "Next transfer length: " + boost::lexical_cast<std::string>(next_chunk_beginning.next_transfer_length) + "\r\n";
       return;
       }
     }
