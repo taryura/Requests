@@ -7,48 +7,46 @@
 		<Option compiler="copy_of_gnu_gcc_compiler_720" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Win Yandex Translate" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/Requests" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="0" />
 				<Option compiler="copy_of_gnu_gcc_compiler_720" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="D:/wxWidgets-3.0.3/lib/gcc_dll/mswu" />
-					<Add directory="include" />
+					<Add directory="D:/wxWidgets-3.1.2_dyn/lib/gcc_dll/mswu" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="D:/wxWidgets-3.0.3/lib/gcc_dll/mswu" />
+					<Add directory="D:/wxWidgets-3.1.2_dyn/lib/gcc_dll/mswu" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="libwxmsw30u_core.a" />
-					<Add library="libwxbase30u.a" />
+					<Add library="libwxmsw31u_core.a" />
+					<Add library="libwxbase31u.a" />
 					<Add library="libwxpng.a" />
 					<Add library="libwxzlib.a" />
-					<Add directory="D:/wxWidgets-3.0.3/lib/gcc_dll" />
+					<Add directory="D:/wxWidgets-3.1.2_dyn/lib/gcc_dll" />
 				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Win Yandex Translate" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/Requests" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="0" />
 				<Option compiler="copy_of_gnu_gcc_compiler_720" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="D:/wxWidgets-3.0.3/lib/gcc_dll/mswu" />
-					<Add directory="include" />
+					<Add directory="D:/wxWidgets-3.1.2_dyn/lib/gcc_dll/mswu" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add directory="D:/wxWidgets-3.0.3/lib/gcc_dll/mswu" />
+					<Add directory="D:/wxWidgets-3.1.2_dyn/lib/gcc_dll/mswu" />
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="libwxmsw30u_core.a" />
-					<Add library="libwxbase30u.a" />
+					<Add library="libwxmsw31u_core.a" />
+					<Add library="libwxbase31u.a" />
 					<Add library="libwxpng.a" />
 					<Add library="libwxzlib.a" />
-					<Add directory="D:/wxWidgets-3.0.3/lib/gcc_dll" />
+					<Add directory="D:/wxWidgets-3.1.2_dyn/lib/gcc_dll" />
 				</Linker>
 			</Target>
 		</Build>
@@ -60,15 +58,15 @@
 			<Add option="-D__WXMSW__" />
 			<Add option="-DWXUSINGDLL" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add directory="D:/wxWidgets-3.0.3/include" />
-			<Add directory="../Requests" />
-			<Add directory="../../../boost_66_installed/include/boost-1_66" />
-			<Add directory="../../../openssl-1.0.2n_7.2.0/include" />
+			<Add directory="D:/wxWidgets-3.1.2_dyn/include" />
+			<Add directory="D:/boost_66_installed/include/boost-1_66" />
 			<Add directory="include" />
 			<Add directory="src" />
+			<Add directory="D:/openssl-1.0.2n_7.2.0/include" />
+			<Add directory="../Requests" />
 		</Compiler>
 		<ResourceCompiler>
-			<Add directory="D:/wxWidgets-3.0.3/include" />
+			<Add directory="D:/wxWidgets-3.1.2_dyn/include" />
 		</ResourceCompiler>
 		<Linker>
 			<Add option="-mthreads" />
@@ -81,6 +79,8 @@
 		</Linker>
 		<Unit filename="Main.cpp" />
 		<Unit filename="Main.h" />
+		<Unit filename="include/EventRedirect.h" />
+		<Unit filename="include/POP3.h" />
 		<Unit filename="include/a_requests.h" />
 		<Unit filename="include/httprequest.h" />
 		<Unit filename="include/input_validator.h" />
@@ -91,6 +91,8 @@
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="src/EventRedirect.cpp" />
+		<Unit filename="src/POP3.cpp" />
 		<Unit filename="src/Toolbars.cpp" />
 		<Unit filename="src/a_requests.cpp" />
 		<Unit filename="src/event_handlers.cpp" />
@@ -106,7 +108,6 @@
 		<Unit filename="wxGUI2.h" />
 		<Extensions>
 			<code_completion />
-			<envvars />
 			<debugger />
 		</Extensions>
 	</Project>

@@ -46,8 +46,14 @@ wxString wxbuildinfo(wxbuildinfoformat format)
     return wxbuild;
 }
 
+wxGUI2Frame::wxGUI2Frame(wxFrame *frame, int a, const wxString& title)
+    : EventRedirect(frame, a, title)
+    {
+
+    }
+
 wxGUI2Frame::wxGUI2Frame(wxFrame *frame, const wxString& title)
-    : wxFrame(frame, -1, title)
+    : EventRedirect(frame, -1, title)
 {
     // creating a menu bar
     mbar = new wxMenuBar();

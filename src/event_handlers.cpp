@@ -10,6 +10,7 @@
 #include "wxGUI2.h"
 #include "sslrequest.h"
 #include "httprequest.h"
+#include "POP3.h"
 
 
 //General Close Event
@@ -124,8 +125,18 @@ void wxGUI2Frame::OnSave(wxCommandEvent &event)
 
 void wxGUI2Frame::OnImpFromFile(wxCommandEvent &event)
 {
-    wxString msg = "Supposed to import an existing project from file";
-    wxMessageBox(msg, _("Welcome to..."));
+
+    //wxIMPLEMENT_APP_NO_MAIN(POP3App);
+
+    	wxString theTitle;
+	theTitle = wxGetTextFromUser(_("Enter a title"),
+		_("Input text"), _("NO NAME"), this, -1, -1, true);
+
+    POP3Frame* frame2 = new POP3Frame(0L, _(theTitle));
+    //frame->SetIcon(wxICON(aaaa)); // To Set App Icon
+    frame2->Show();
+    //wxString msg = "Supposed to import an existing project from file";
+    //wxMessageBox(msg, _("Welcome to..."));
 }
 
 void wxGUI2Frame::OnImpFromURL(wxCommandEvent &event)
@@ -163,35 +174,7 @@ void wxGUI2Frame::OnPaste(wxCommandEvent &event)
 
 void wxGUI2Frame::OnAbout(wxCommandEvent &event)
 {
-    wxString msg = "Hello my friend";
+    wxString msg = wxVERSION_STRING;
     wxMessageBox(msg, _("Welcome to..."));
 }
 
-bool wxGUI2Frame::ProcessEvent(wxEvent& event)
-{
-     static wxEvent* s_lastEvent = NULL;
-     // Check for infinite recursion
-     if (& event == s_lastEvent)
-         return false;
-     if (event.IsCommandEvent() &&
-        !event.IsKindOf(CLASSINFO(wxChildFocusEvent)) &&
-        !event.IsKindOf(CLASSINFO(wxContextMenuEvent)))
-     {
-         s_lastEvent = & event;
-         wxControl *focusWin = wxDynamicCast(FindFocus(), wxControl);
-         bool success = false;
-         if (focusWin)
-             success = focusWin->GetEventHandler()
-                                 ->ProcessEvent(event);
-         if (!success)
-             success = wxFrame::ProcessEvent(event);
-         s_lastEvent = NULL;
-         return success;
-     }
-
-     else
-
-     {
-         return wxFrame::ProcessEvent(event);
-     }
- }

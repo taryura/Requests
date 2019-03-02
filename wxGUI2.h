@@ -10,17 +10,13 @@
 #ifndef WXGUI2MAIN_H
 #define WXGUI2MAIN_H
 
-#ifndef WX_PRECOMP
-#include <wx/wx.h>
-#include "winsock2.h"
-#endif
+#include "EventRedirect.h"
 
-#include "Main.h"
-
-class wxGUI2Frame: public wxFrame
+class wxGUI2Frame: public EventRedirect
 {
     public:
         wxGUI2Frame(wxFrame *frame, const wxString& title);
+        wxGUI2Frame(wxFrame *frame, int a, const wxString& title);
         ~wxGUI2Frame();
         wxMenuBar *mbar;
 
@@ -91,7 +87,6 @@ class wxGUI2Frame: public wxFrame
         //Override function - redirects CUT COPY PASTE events from main frame
         //to the focused text control
 
-        bool ProcessEvent(wxEvent& event);
 
         DECLARE_EVENT_TABLE()
 };
