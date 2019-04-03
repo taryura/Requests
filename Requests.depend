@@ -2618,21 +2618,16 @@
 
 1544391608 d:\wxwidgets-3.1.2_dyn\include\wx\qt\mdi.h
 
-1550066600 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1554314365 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
-	"parse_chunk.h"
-	"parse_head.h"
 	"boost/lexical_cast.hpp"
 
-1550066387 d:\c++ projects\Новая папка\requests\include\a_requests.h
+1554314888 d:\c++ projects\Новая папка\requests\include\a_requests.h
 	<cstring>
 	<string>
-	<iostream>
-	<sstream>
-	<cstdlib>
-	<boost/bind.hpp>
-	<boost/asio.hpp>
-	<boost/asio/ssl.hpp>
+	"clientBase.h"
+	"parse_chunk.h"
+	"parse_head.h"
 	"input_validator.h"
 
 1514338439 d:\boost_66_installed\include\boost-1_66\boost\bind.hpp
@@ -13544,7 +13539,7 @@
 	"boost/config.hpp"
 	<streambuf>
 
-1551470919 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
+1552579508 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
 	"wxGUI2.h"
 	"sslrequest.h"
 	"httprequest.h"
@@ -13556,7 +13551,7 @@
 1522242148 d:\c++ projects\Новая папка\requests\include\httprequest.h
 	"a_requests.h"
 
-1551446628 d:\c++ projects\Новая папка\requests\include\pop3.h
+1553710219 d:\c++ projects\Новая папка\requests\include\pop3.h
 	"wxGUI2.h"
 
 1551461052 source:d:\c++ projects\Новая папка\requests\src\eventredirect.cpp
@@ -13580,7 +13575,7 @@
 1549635261 source:d:\c++ projects\Новая папка\requests\src\parse_head.cpp
 	"parse_head.h"
 
-1551446628 source:d:\c++ projects\Новая папка\requests\src\pop3.cpp
+1552582206 source:d:\c++ projects\Новая папка\requests\src\pop3.cpp
 	"POP3.h"
 
 1549633815 source:d:\c++ projects\Новая папка\requests\src\reply_parser.cpp
@@ -13595,4 +13590,18 @@
 1551461052 source:d:\c++ projects\Новая папка\requests\wxgui2.cpp
 	"wx_pch.h"
 	"wxGUI2.h"
+
+1553711992 source:d:\c++ projects\Новая папка\requests\src\pop3_controls.cpp
+	"POP3.h"
+
+1554315413 d:\c++ projects\Новая папка\requests\include\clientbase.h
+	<iostream>
+	<sstream>
+	<cstdlib>
+	<boost/bind.hpp>
+	<boost/asio.hpp>
+	<boost/asio/ssl.hpp>
+
+1554315413 source:d:\c++ projects\Новая папка\requests\src\clientbase.cpp
+	"clientBase.h"
 

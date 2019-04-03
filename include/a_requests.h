@@ -3,21 +3,14 @@
 
 #include <cstring>
 #include <string>
-#include <iostream>
-#include <sstream>
-#include <cstdlib>
-#include <boost/bind.hpp>
-#include <boost/asio.hpp>
-#include <boost/asio/ssl.hpp>
+#include "clientBase.h"
+#include "parse_chunk.h"
+#include "parse_head.h"
 #include "input_validator.h"
 
-class client{
+class client : public clientBase{
 private:
-  boost::asio::ssl::stream<boost::asio::ip::tcp::socket> socket_;
   boost::asio::streambuf MyBuffer;
-  bool verify_certificate(bool preverified,
-      boost::asio::ssl::verify_context& ctx);
-  void handle_connect(const boost::system::error_code& error);
   void handle_handshake(const boost::system::error_code& error);
   void handle_write(const boost::system::error_code& error,
       size_t bytes_transferred);
@@ -28,8 +21,6 @@ private:
   std::string buff_to_string (boost::asio::streambuf &MyBuffer);
 
 public:
-  std::string request_;
-  std::string reply2;
   std::string first_part;
   std::string error_mess_;
   int header_length, chunk_to_transfer_int, chunk_start_pointer[128], chunk_length[128], cpi;

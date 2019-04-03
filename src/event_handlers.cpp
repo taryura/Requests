@@ -132,9 +132,10 @@ void wxGUI2Frame::OnImpFromFile(wxCommandEvent &event)
 	theTitle = wxGetTextFromUser(_("Enter a title"),
 		_("Input text"), _("NO NAME"), this, -1, -1, true);
 
-    POP3Frame* frame2 = new POP3Frame(0L, _(theTitle));
+    POP3Frame *frame2 = new POP3Frame(0L, _(theTitle));
     //frame->SetIcon(wxICON(aaaa)); // To Set App Icon
     frame2->Show();
+
     //wxString msg = "Supposed to import an existing project from file";
     //wxMessageBox(msg, _("Welcome to..."));
 }

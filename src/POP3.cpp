@@ -3,6 +3,8 @@
 POP3Frame::POP3Frame(wxFrame *frame, const wxString& title)
     : wxFrame(frame, -1, title)
 {
+
+    CreateTextCtrls();
     // creating a menu bar
 /*    mbar = new wxMenuBar();
 
