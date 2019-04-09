@@ -1,4 +1,5 @@
 #include "POP3.h"
+#include "sslrequest.h"
 
 void POP3Frame::CreateTextCtrls()
 
@@ -32,8 +33,13 @@ void POP3Frame::OnEnter(wxCommandEvent &event)
     if (tc_request_val != "")
     {
         wxString tc_response_val = tc_response->GetValue();
-        tc_response->SetValue(tc_response_val + tc_request_val + "\r\n");
+
+        sslrequest requests ("pop3.mail.ru", "995");
+        requests.connect_set ();
+
+        tc_response->SetValue(tc_response_val + tc_request_val + "\r\n"+requests.replyreceived +"\r\n");
         tc_request->SetValue("");
+
     }
 
     //wxString msg = "You pressed enter";

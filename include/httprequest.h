@@ -7,7 +7,7 @@ class httprequest
 {
     public:
 
-    void rqst_set (std::string addr, std::string prt, const std::string &req_text);
+    void connect_set (std::string addr, std::string prt, const std::string &req_text);
     std::string replyreceived;
 
     protected:

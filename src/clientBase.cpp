@@ -2,11 +2,9 @@
 
 clientBase::clientBase(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
-      boost::asio::ip::tcp::resolver::iterator endpoint_iterator,
-      std::string rqst1)
-    : socket_(io_service, context){
-  {
-    request_ = rqst1;
+      boost::asio::ip::tcp::resolver::iterator endpoint_iterator)
+           : socket_(io_service, context){
+
     socket_.set_verify_mode(boost::asio::ssl::verify_none);
     socket_.set_verify_callback(
         boost::bind(&clientBase::verify_certificate, this, _1, _2));
@@ -14,7 +12,7 @@ clientBase::clientBase(boost::asio::io_service& io_service,
     boost::asio::async_connect(socket_.lowest_layer(), endpoint_iterator,
         boost::bind(&clientBase::handle_connect, this,
           boost::asio::placeholders::error));
-  }
+
 }
   bool clientBase::verify_certificate(bool preverified,
       boost::asio::ssl::verify_context& ctx){

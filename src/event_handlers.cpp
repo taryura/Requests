@@ -64,13 +64,13 @@ void wxGUI2Frame::OnSend(wxCommandEvent &event)
                         if (s_port != "80"){
                         //Text in the status bar
 
-                            sslrequest requests;
-                            requests.rqst_set (url_addr, s_port, request1);
+                            sslrequest requests (url_addr, s_port);
+                            requests.connect_set (request1);
                             tc_response->SetValue(requests.replyreceived);
                          }
                             else {
                                  httprequest requests;
-                                 requests.rqst_set (url_addr, s_port, request1);
+                                 requests.connect_set (url_addr, s_port, request1);
                                  tc_response->SetValue(requests.replyreceived);
                             }
 

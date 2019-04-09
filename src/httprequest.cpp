@@ -1,6 +1,6 @@
 #include "httprequest.h"
 
-void httprequest::rqst_set (std::string addr, std::string prt, const std::string &req_text){
+void httprequest::connect_set (std::string addr, std::string prt, const std::string &req_text){
 
 try
     {

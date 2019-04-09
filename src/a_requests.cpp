@@ -7,9 +7,9 @@ client::client(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
       boost::asio::ip::tcp::resolver::iterator endpoint_iterator,
       std::string rqst1)
-      : clientBase(io_service, context, endpoint_iterator, rqst1){
+      : clientBase(io_service, context, endpoint_iterator){
   {
-
+    request_ = rqst1;
   }
 }
 
