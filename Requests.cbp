@@ -91,6 +91,8 @@
 		<Unit filename="include/parse_head.h" />
 		<Unit filename="include/pop3client.h" />
 		<Unit filename="include/reply_parser.h" />
+		<Unit filename="include/ssl_base.h" />
+		<Unit filename="include/ssl_connect.h" />
 		<Unit filename="include/sslrequest.h" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
@@ -110,6 +112,8 @@
 		<Unit filename="src/parse_head.cpp" />
 		<Unit filename="src/pop3client.cpp" />
 		<Unit filename="src/reply_parser.cpp" />
+		<Unit filename="src/ssl_base.cpp" />
+		<Unit filename="src/ssl_connect.cpp" />
 		<Unit filename="src/sslrequest.cpp" />
 		<Unit filename="wxGUI2.cpp" />
 		<Unit filename="wxGUI2.h" />

@@ -1,19 +1,18 @@
 #ifndef SSLREQUEST_H
 #define SSLREQUEST_H
 
+#include <ssl_base.h>
 #include "a_requests.h"
 
-class sslrequest{
+class sslrequest : public ssl_base
+
+{
 public:
-    std::string replyreceived;
-    void connect_set (std::string &requesttosend);
-    void connect_set ();
-    sslrequest (std::string address1, std::string port1);
+
+    sslrequest (std::string address1, std::string port1, std::string &requesttosend);
 
 private:
-        boost::asio::io_service io_service;
-        boost::asio::ip::tcp::resolver::iterator iterator;
-        void except_handler (std::exception& e);
+
 };
 
 #endif // SSLREQUEST_H

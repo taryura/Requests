@@ -2,6 +2,7 @@
 #define POP3_H
 
 #include "wxGUI2.h"
+#include "ssl_connect.h"
 
 
 class POP3Frame : public wxFrame
@@ -11,6 +12,7 @@ class POP3Frame : public wxFrame
         ~POP3Frame();
 
     private:
+        std::shared_ptr<ssl_connect> cnctor;
         void CreateTextCtrls();
         void OnEnter(wxCommandEvent &event);
         wxTextCtrl *tc_request;

@@ -1,5 +1,5 @@
 #include "POP3.h"
-#include "sslrequest.h"
+
 
 void POP3Frame::CreateTextCtrls()
 
@@ -34,10 +34,35 @@ void POP3Frame::OnEnter(wxCommandEvent &event)
     {
         wxString tc_response_val = tc_response->GetValue();
 
-        sslrequest requests ("pop3.mail.ru", "995");
-        requests.connect_set ();
+        if (!cnctor)
+        {
+            std::shared_ptr<ssl_connect> temp_cnctor(new  ssl_connect("pop3.mail.ru", "995"));
+            cnctor = temp_cnctor;
+            tc_response->SetValue(tc_response_val + tc_request_val + "\r\n"+cnctor->replyreceived +"\r\n");
+            tc_request->SetValue("");
+            return;
+        }
 
-        tc_response->SetValue(tc_response_val + tc_request_val + "\r\n"+requests.replyreceived +"\r\n");
+        std::string to_send;
+        if (cnctor->connected)
+        {
+            to_send = std::string(tc_request_val.mb_str()) + "\r\n";
+            cnctor->connect_send (to_send);
+        }
+
+        /*if (!cnctor->authorized)
+        {
+            std::string to_send = std::string(tc_request_val.mb_str()) + "\r\n";
+            cnctor->connect_send (to_send);
+        }*/
+
+        std::stringstream aaa;
+        aaa << "Sent: " << to_send;
+
+        aaa << cnctor->connected << "\r\n";
+        aaa << cnctor << "\r\n";
+        aaa<< cnctor->replyreceived << "\r\n";
+        tc_response->SetValue(tc_response_val + tc_request_val + "\r\n"+cnctor->replyreceived +"\r\n" + aaa.str());
         tc_request->SetValue("");
 
     }

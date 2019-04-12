@@ -13539,20 +13539,22 @@
 	"boost/config.hpp"
 	<streambuf>
 
-1554732206 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
+1555073800 source:d:\c++ projects\Новая папка\requests\src\event_handlers.cpp
 	"wxGUI2.h"
 	"sslrequest.h"
 	"httprequest.h"
 	"POP3.h"
 
-1554732186 d:\c++ projects\Новая папка\requests\include\sslrequest.h
+1555073125 d:\c++ projects\Новая папка\requests\include\sslrequest.h
+	<ssl_base.h>
 	"a_requests.h"
 
 1554732186 d:\c++ projects\Новая папка\requests\include\httprequest.h
 	"a_requests.h"
 
-1553713819 d:\c++ projects\Новая папка\requests\include\pop3.h
+1555073433 d:\c++ projects\Новая папка\requests\include\pop3.h
 	"wxGUI2.h"
+	"ssl_connect.h"
 
 1551464652 source:d:\c++ projects\Новая папка\requests\src\eventredirect.cpp
 	"EventRedirect.h"
@@ -13581,9 +13583,8 @@
 1549637415 source:d:\c++ projects\Новая папка\requests\src\reply_parser.cpp
 	"reply_parser.h"
 
-1554733714 source:d:\c++ projects\Новая папка\requests\src\sslrequest.cpp
+1555073905 source:d:\c++ projects\Новая папка\requests\src\sslrequest.cpp
 	"sslrequest.h"
-	"pop3client.h"
 
 1522071363 source:d:\c++ projects\Новая папка\requests\src\toolbars.cpp
 	"wxGUI2.h"
@@ -13592,7 +13593,7 @@
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1553715592 source:d:\c++ projects\Новая папка\requests\src\pop3_controls.cpp
+1555077034 source:d:\c++ projects\Новая папка\requests\src\pop3_controls.cpp
 	"POP3.h"
 
 1554394522 d:\c++ projects\Новая папка\requests\include\clientbase.h
@@ -13606,11 +13607,30 @@
 1554394489 source:d:\c++ projects\Новая папка\requests\src\clientbase.cpp
 	"clientBase.h"
 
-1554733641 source:d:\c++ projects\Новая папка\requests\src\pop3client.cpp
+1555076638 source:d:\c++ projects\Новая папка\requests\src\pop3client.cpp
 	"pop3client.h"
 
-1554733397 d:\c++ projects\Новая папка\requests\include\pop3client.h
+1555078990 d:\c++ projects\Новая папка\requests\include\pop3client.h
 	<cstring>
 	<string>
 	"clientBase.h"
+
+1555073125 d:\c++ projects\Новая папка\requests\include\ssl_connect.h
+	<ssl_base.h>
+	"pop3client.h"
+	<memory>
+
+1555073710 d:\c++ projects\Новая папка\requests\include\ssl_base.h
+	<iostream>
+	<sstream>
+	<cstdlib>
+	<boost/bind.hpp>
+	<boost/asio.hpp>
+	<boost/asio/ssl.hpp>
+
+1555071917 source:d:\c++ projects\Новая папка\requests\src\ssl_base.cpp
+	"ssl_base.h"
+
+1555077288 source:d:\c++ projects\Новая папка\requests\src\ssl_connect.cpp
+	"ssl_connect.h"
 

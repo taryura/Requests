@@ -12,16 +12,20 @@ class pop3client : public clientBase
         pop3client(boost::asio::io_service& io_service,
           boost::asio::ssl::context& context,
           boost::asio::ip::tcp::resolver::iterator endpoint_iterator);
+       void write_req(std::string &request_to_write);
+       //boost::system::error_code *get_error();
 
     protected:
+       const boost::system::error_code *e2;
        boost::asio::streambuf MyBuffer;
        void handle_handshake(const boost::system::error_code& error);
-       void handle_write(const boost::system::error_code& error,
-           size_t bytes_transferred);
+       void handle_write(const boost::system::error_code& error);
        void handle_read(const boost::system::error_code& error,
            size_t bytes_transferred);
-       void handle_read_content(const boost::system::error_code& error);
-       void handle_read_chunk(const boost::system::error_code& error);
+        void handle_read2(const boost::system::error_code& error,
+           size_t bytes_transferred);
+       //void handle_read_content(const boost::system::error_code& error);
+       //void handle_read_chunk(const boost::system::error_code& error);
        std::string buff_to_string (boost::asio::streambuf &MyBuffer);
 };
 
