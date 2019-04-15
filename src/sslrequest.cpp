@@ -10,7 +10,7 @@ sslrequest::sslrequest (std::string address1, std::string port1, std::string &re
   try
   {
 
-    //boost::asio::ssl::context ctx(boost::asio::ssl::context::sslv23);
+    boost::asio::ssl::context ctx(boost::asio::ssl::context::tlsv12);
     client c(io_service, ctx, iterator, requesttosend);
 
     io_service.run();
