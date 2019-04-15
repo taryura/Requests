@@ -40,8 +40,11 @@ authorized = false;
     {
 
     }
-
+    mtx_ptr->lock();
     replyreceived = readBuffer();
+    c2->bufferReady = FALSE;
+    mtx_ptr->unlock();
+
     connected = true;
   }
   catch (std::exception& e)
@@ -56,8 +59,26 @@ void ssl_connect::connect_send (std::string &requesttosend){
   try
   {
 
-    //c2->write_req(requesttosend);
-    //replyreceived = c2->reply2;
+    mtx_ptr->lock();
+    *threadBuff_ptr << requesttosend;
+    mtx_ptr->unlock();
+    c2->requestInBuffer = TRUE;
+
+
+    while (!c2->bufferReady)
+    {
+
+    }
+    mtx_ptr->lock();
+    replyreceived = readBuffer();
+    c2->bufferReady = FALSE;
+    mtx_ptr->unlock();
+    if (requesttosend == "QUIT\r\n")
+    {
+       replyreceived += "\r\n\r\nConnection closed";
+    }
+
+
   }
   catch (std::exception& e)
   {
@@ -80,10 +101,9 @@ void ssl_connect::client_run (std::shared_ptr<std::stringstream> stringstream_pt
 
 std::string ssl_connect::readBuffer ()
 {
-    mtx_ptr->lock();
+
     std::string temp_string = threadBuff_ptr->str();
     threadBuff_ptr->str("");
     threadBuff_ptr->clear();
-    mtx_ptr->unlock();
     return temp_string;
 }

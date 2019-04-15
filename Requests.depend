@@ -2618,7 +2618,7 @@
 
 1544395208 d:\wxwidgets-3.1.2_dyn\include\wx\qt\mdi.h
 
-1554394489 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
+1555342380 source:d:\c++ projects\Новая папка\requests\src\a_requests.cpp
 	"a_requests.h"
 	"boost/lexical_cast.hpp"
 
@@ -13593,7 +13593,7 @@
 	"wx_pch.h"
 	"wxGUI2.h"
 
-1555330798 source:d:\c++ projects\Новая папка\requests\src\pop3_controls.cpp
+1555345813 source:d:\c++ projects\Новая папка\requests\src\pop3_controls.cpp
 	"POP3.h"
 
 1554394522 d:\c++ projects\Новая папка\requests\include\clientbase.h
@@ -13607,17 +13607,19 @@
 1554394489 source:d:\c++ projects\Новая папка\requests\src\clientbase.cpp
 	"clientBase.h"
 
-1555339823 source:d:\c++ projects\Новая папка\requests\src\pop3client.cpp
+1555347322 source:d:\c++ projects\Новая папка\requests\src\pop3client.cpp
+	<thread>
+	<chrono>
 	"pop3client.h"
 
-1555340136 d:\c++ projects\Новая папка\requests\include\pop3client.h
+1555345297 d:\c++ projects\Новая папка\requests\include\pop3client.h
 	<memory>
 	<mutex>
 	<cstring>
 	<string>
 	"clientBase.h"
 
-1555340301 d:\c++ projects\Новая папка\requests\include\ssl_connect.h
+1555345343 d:\c++ projects\Новая папка\requests\include\ssl_connect.h
 	<thread>
 	<memory>
 	<mutex>
@@ -13635,6 +13637,6 @@
 1555071917 source:d:\c++ projects\Новая папка\requests\src\ssl_base.cpp
 	"ssl_base.h"
 
-1555334680 source:d:\c++ projects\Новая папка\requests\src\ssl_connect.cpp
+1555345297 source:d:\c++ projects\Новая папка\requests\src\ssl_connect.cpp
 	"ssl_connect.h"
 

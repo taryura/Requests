@@ -87,7 +87,8 @@ void client::handle_read(const boost::system::error_code& error,
         //length = Content length defined in HTTP header
 
         int fpl = first_part.length();
-        if ((header_length + 4 + length) > fpl)
+        const int crlf_length = 4;
+        if ((header_length + crlf_length + length) > fpl)
           {
           //if not reading till EOF
           boost::asio::async_read(socket_, MyBuffer,
@@ -111,7 +112,8 @@ void client::handle_read(const boost::system::error_code& error,
           //defines offset where the chunk starts
           cpi = 0;
           chunk_start_pointer[cpi] = 0;
-          chunk_length[cpi] = header_length + 2;
+          const int crlf_length = 2;
+          chunk_length[cpi] = header_length + crlf_length;
 
           //Delegating to chunk processing method
           std::cout << "Reading next chunk after the header:\r\n\r\n " << std::endl;

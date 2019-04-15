@@ -36,21 +36,23 @@ void POP3Frame::OnEnter(wxCommandEvent &event)
 
         if (!cnctor)
         {
-            std::shared_ptr<ssl_connect> temp_cnctor(new  ssl_connect("pop3.i.ua", "995"));
+            std::shared_ptr<ssl_connect> temp_cnctor(new  ssl_connect("pop3.mail.ru", "995"));
             cnctor = temp_cnctor;
             tc_response->SetValue(tc_response_val + tc_request_val + "\r\n"+cnctor->replyreceived +"\r\n");
             tc_request->SetValue("");
             return;
         }
 
-        /*std::string to_send;
+        std::string to_send;
         if (cnctor->connected)
         {
             to_send = std::string(tc_request_val.mb_str()) + "\r\n";
             cnctor->connect_send (to_send);
+            tc_response->SetValue(tc_response_val + tc_request_val + "\r\n"+cnctor->replyreceived +"\r\n");
+            tc_request->SetValue("");
         }
 
-        if (!cnctor->authorized)
+        /*if (!cnctor->authorized)
         {
             std::string to_send = std::string(tc_request_val.mb_str()) + "\r\n";
             cnctor->connect_send (to_send);
