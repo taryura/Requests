@@ -17,6 +17,8 @@ pop3client::pop3client(boost::asio::io_service& io_service,
     reply2 = "";
     bufferReady = FALSE;
     requestInBuffer = FALSE;
+    terminateIO = FALSE;
+    IOterminated = FALSE;
   }
 }
 
@@ -49,18 +51,20 @@ void pop3client::handle_read(const boost::system::error_code& error,
       *threadBuff_ptr << &MyBuffer;
       bufferReady = TRUE;
       mtx_ptr->unlock();
-          if (request_ == "QUIT\r\n")
-    {
-        return;
-    }
+
 
       //waiting for the request from the main thread
       while (!requestInBuffer)
       {
+        if (terminateIO)
+          {
+           IOterminated = TRUE;
+           return;
+          }
           std::this_thread::sleep_for (std::chrono::milliseconds(100));
       }
       mtx_ptr->lock();
-      request_ = readBuffer();
+      request_ = readBuffer(threadBuff_ptr);
       requestInBuffer = FALSE;
       mtx_ptr->unlock();
 
@@ -89,10 +93,10 @@ std::string pop3client::buff_to_string (boost::asio::streambuf &MyBuffer)
       return BufOutStream.str();
 }
 
-std::string pop3client::readBuffer ()
+std::string pop3client::readBuffer (std::shared_ptr<std::stringstream> temp_threadBuff_ptr)
 {
-    std::string temp_string = threadBuff_ptr->str();
-    threadBuff_ptr->str("");
-    threadBuff_ptr->clear();
+    std::string temp_string = temp_threadBuff_ptr->str();
+    temp_threadBuff_ptr->str("");
+    temp_threadBuff_ptr->clear();
     return temp_string;
 }

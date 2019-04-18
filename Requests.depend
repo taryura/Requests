@@ -13607,19 +13607,19 @@
 1554394489 source:d:\c++ projects\Новая папка\requests\src\clientbase.cpp
 	"clientBase.h"
 
-1555347322 source:d:\c++ projects\Новая папка\requests\src\pop3client.cpp
+1555447278 source:d:\c++ projects\Новая папка\requests\src\pop3client.cpp
 	<thread>
 	<chrono>
 	"pop3client.h"
 
-1555345297 d:\c++ projects\Новая папка\requests\include\pop3client.h
+1555589271 d:\c++ projects\Новая папка\requests\include\pop3client.h
 	<memory>
 	<mutex>
 	<cstring>
 	<string>
 	"clientBase.h"
 
-1555345343 d:\c++ projects\Новая папка\requests\include\ssl_connect.h
+1555589271 d:\c++ projects\Новая папка\requests\include\ssl_connect.h
 	<thread>
 	<memory>
 	<mutex>
@@ -13637,6 +13637,7 @@
 1555071917 source:d:\c++ projects\Новая папка\requests\src\ssl_base.cpp
 	"ssl_base.h"
 
-1555345297 source:d:\c++ projects\Новая папка\requests\src\ssl_connect.cpp
+1555447886 source:d:\c++ projects\Новая папка\requests\src\ssl_connect.cpp
 	"ssl_connect.h"
+	<chrono>
 

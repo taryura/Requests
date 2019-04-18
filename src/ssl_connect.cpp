@@ -1,4 +1,5 @@
 #include "ssl_connect.h"
+#include <chrono>
 
 ssl_connect::ssl_connect(std::string address1, std::string port1)
                          : ssl_base (address1, port1)
@@ -32,16 +33,16 @@ authorized = false;
     //waiting the thread to create the client
     while (!c2)
     {
-
+        std::this_thread::sleep_for (std::chrono::milliseconds(10));
     }
 
     //waiting the thread to fill the buffer
     while (!c2->bufferReady)
     {
-
+        std::this_thread::sleep_for (std::chrono::milliseconds(10));
     }
     mtx_ptr->lock();
-    replyreceived = readBuffer();
+    replyreceived = pop3client::readBuffer(threadBuff_ptr);
     c2->bufferReady = FALSE;
     mtx_ptr->unlock();
 
@@ -59,6 +60,12 @@ void ssl_connect::connect_send (std::string &requesttosend){
   try
   {
 
+    if (c2->IOterminated)
+    {
+        replyreceived = "\r\n\r\nIO terminated";
+        return;
+    }
+
     mtx_ptr->lock();
     *threadBuff_ptr << requesttosend;
     mtx_ptr->unlock();
@@ -67,15 +74,21 @@ void ssl_connect::connect_send (std::string &requesttosend){
 
     while (!c2->bufferReady)
     {
-
+        std::this_thread::sleep_for (std::chrono::milliseconds(10));
     }
     mtx_ptr->lock();
-    replyreceived = readBuffer();
+    replyreceived = pop3client::readBuffer(threadBuff_ptr);
     c2->bufferReady = FALSE;
     mtx_ptr->unlock();
     if (requesttosend == "QUIT\r\n")
     {
        replyreceived += "\r\n\r\nConnection closed";
+       c2->terminateIO = TRUE;
+       while (!c2->IOterminated)
+        {
+        std::this_thread::sleep_for (std::chrono::milliseconds(10));
+        }
+       //delete c2;
     }
 
 
@@ -99,11 +112,3 @@ void ssl_connect::client_run (std::shared_ptr<std::stringstream> stringstream_pt
     io_service.run();
 }
 
-std::string ssl_connect::readBuffer ()
-{
-
-    std::string temp_string = threadBuff_ptr->str();
-    threadBuff_ptr->str("");
-    threadBuff_ptr->clear();
-    return temp_string;
-}

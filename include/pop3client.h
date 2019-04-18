@@ -17,7 +17,8 @@ class pop3client : public clientBase
           std::shared_ptr<std::stringstream> stringstream_ptr,
           std::shared_ptr<std::mutex> mutex_ptr);
        void write_req(std::string &request_to_write);
-       bool bufferReady, requestInBuffer;
+       bool bufferReady, requestInBuffer, terminateIO, IOterminated;
+       static std::string readBuffer (std::shared_ptr<std::stringstream> temp_threadBuff_ptr);
        //boost::system::error_code *get_error();
 
     protected:
@@ -37,7 +38,7 @@ class pop3client : public clientBase
     private:
         std::shared_ptr<std::stringstream> threadBuff_ptr;
         std::shared_ptr<std::mutex> mtx_ptr;
-        std::string readBuffer ();
+
 };
 
 #endif // POP3CLIENT_H
