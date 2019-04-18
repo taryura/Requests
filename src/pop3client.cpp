@@ -10,11 +10,19 @@ pop3client::pop3client(boost::asio::io_service& io_service,
       std::shared_ptr<std::mutex> mutex_ptr)
       : clientBase(io_service, context, endpoint_iterator){
   {
+    //Initializing read handler function pointer
+    handler_pointer = &pop3client::handle_read;
+
+    //Initializing exchange buffer pointer
     threadBuff_ptr = stringstream_ptr;
+
+    //mutex to block the exchange buffer
     mtx_ptr = mutex_ptr;
 
     request_ = "";
     reply2 = "";
+
+    //reseting all flags
     bufferReady = FALSE;
     requestInBuffer = FALSE;
     terminateIO = FALSE;
@@ -31,7 +39,7 @@ pop3client::pop3client(boost::asio::io_service& io_service,
       //reading header
       boost::asio::async_read_until(socket_,
           MyBuffer, "\r\n",
-          boost::bind(&pop3client::handle_read, this,
+          boost::bind(handler_pointer, this,
             boost::asio::placeholders::error,
             boost::asio::placeholders::bytes_transferred));
     }

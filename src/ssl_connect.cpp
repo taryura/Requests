@@ -80,15 +80,37 @@ void ssl_connect::connect_send (std::string &requesttosend){
     replyreceived = pop3client::readBuffer(threadBuff_ptr);
     c2->bufferReady = FALSE;
     mtx_ptr->unlock();
+
     if (requesttosend == "QUIT\r\n")
     {
-       replyreceived += "\r\n\r\nConnection closed";
-       c2->terminateIO = TRUE;
-       while (!c2->IOterminated)
+       stopclient();
+    }
+
+    //pop3 command length
+    unsigned int pop3comlength = 4;
+    if (requesttosend.length() >= pop3comlength)
+    {
+        if ((requesttosend.substr(0, pop3comlength) == "PASS") || (requesttosend.substr(0, pop3comlength) == "pass"))
         {
-        std::this_thread::sleep_for (std::chrono::milliseconds(10));
+            //pop3 OK respond code length
+            unsigned int pop3Oklength = 3;
+            if (replyreceived.length() >= pop3Oklength)
+            {
+
+                //replyreceived += ("\r\n" + replyreceived.substr(0, pop3Oklength)+ "\r\n");
+                if (replyreceived.substr(0, pop3Oklength) == "+OK")
+                    {
+                        authorized = TRUE;
+                    }
+                else
+                    {
+                        replyreceived += "\r\nNot authorized";
+                        stopclient();
+                    }
+            }
+
+
         }
-       //delete c2;
     }
 
 
@@ -112,3 +134,12 @@ void ssl_connect::client_run (std::shared_ptr<std::stringstream> stringstream_pt
     io_service.run();
 }
 
+void ssl_connect::stopclient()
+{
+       replyreceived += "\r\n\r\nConnection closed";
+       c2->terminateIO = TRUE;
+       while (!c2->IOterminated)
+        {
+        std::this_thread::sleep_for (std::chrono::milliseconds(10));
+        }
+}

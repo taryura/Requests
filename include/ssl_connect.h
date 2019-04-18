@@ -6,9 +6,6 @@
 #include <ssl_base.h>
 #include "pop3client.h"
 
-
-
-
 class ssl_connect : public ssl_base
 {
     public:
@@ -30,7 +27,7 @@ class ssl_connect : public ssl_base
     private:
         std::thread t1;
         std::unique_ptr<pop3client> c2;
-        //std::string readBuffer ();
+        void stopclient();
 
 };
 
