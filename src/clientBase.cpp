@@ -3,7 +3,7 @@
 clientBase::clientBase(boost::asio::io_service& io_service,
       boost::asio::ssl::context& context,
       boost::asio::ip::tcp::resolver::iterator endpoint_iterator)
-           : socket_(io_service, context){
+           : socket_(io_service, context), tmr(io_service){
 
     socket_.set_verify_mode(boost::asio::ssl::verify_none);
     socket_.set_verify_callback(
@@ -34,8 +34,7 @@ clientBase::clientBase(boost::asio::io_service& io_service,
     }
     else
     {
-      reply2 = ("Connect failed: " + error.message());
-      std::cout << "Connect failed: " << error.message() << "\n";
+       handle_error (error);
     }
   }
 

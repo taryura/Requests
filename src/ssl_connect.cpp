@@ -22,7 +22,16 @@ authorized = false;
 
     t1 = std::thread([this]()
         {
+            try
+            {
             client_run (threadBuff_ptr, mtx_ptr);
+            }
+            catch (std::logic_error &ec)
+            {
+                replyreceived = ec.what();
+                throw;
+            }
+
         });
 
     if (t1.joinable())
@@ -81,12 +90,15 @@ void ssl_connect::connect_send (std::string &requesttosend){
     c2->bufferReady = FALSE;
     mtx_ptr->unlock();
 
-    if (requesttosend == "QUIT\r\n")
+    if (requesttosend == "QUIT\r\n" || requesttosend == "quit\r\n")
     {
+       authorized = false;
        stopclient();
     }
 
     //pop3 command length
+    if (!authorized)
+    {
     unsigned int pop3comlength = 4;
     if (requesttosend.length() >= pop3comlength)
     {
@@ -100,6 +112,7 @@ void ssl_connect::connect_send (std::string &requesttosend){
                 //replyreceived += ("\r\n" + replyreceived.substr(0, pop3Oklength)+ "\r\n");
                 if (replyreceived.substr(0, pop3Oklength) == "+OK")
                     {
+                        c2->authorized = TRUE;
                         authorized = TRUE;
                     }
                 else
@@ -113,8 +126,27 @@ void ssl_connect::connect_send (std::string &requesttosend){
         }
     }
 
+    }
+
+    else
+    {
+        for (int i = replyreceived.length(); i > 3; i --)
+
+            //We need to find the last "+OK" so 75 = "K" 79 = "O" and 43 = "+"
+        if (replyreceived[i] == 75 && replyreceived[i-1] == 79 && replyreceived[i-2] == 43)
+        {
+
+            //Cutting out the last "+OK" from the response
+            replyreceived = replyreceived.substr(0, (i - 3));
+            //once the last "+OK" is found we stop the loop
+            break;
+        }
+
+    }
+
 
   }
+
   catch (std::exception& e)
   {
     except_handler(e);

@@ -18,15 +18,23 @@ class pop3client : public clientBase
           std::shared_ptr<std::mutex> mutex_ptr);
 
 
-       bool bufferReady, requestInBuffer, terminateIO, IOterminated;
+       //flags
+       bool authorized, bufferReady, requestInBuffer, terminateIO, IOterminated, a_timeout;
 
+       //buffer reading method
        static std::string readBuffer (std::shared_ptr<std::stringstream> temp_threadBuff_ptr);
 
+       //shutdown method
+       void shutdown (const boost::system::error_code& e2);
+       void handle_error (const boost::system::error_code& e2);
+
     protected:
-       const boost::system::error_code *e2;
+
+       // io buffer
        boost::asio::streambuf MyBuffer;
 
 
+       //handlers
        void handle_handshake(const boost::system::error_code& error);
        void handle_write(const boost::system::error_code& error,
                          size_t bytes_transferred);
@@ -36,10 +44,14 @@ class pop3client : public clientBase
        void handle_read2(const boost::system::error_code& error,
                           size_t bytes_transferred);
 
-       std::string buff_to_string (boost::asio::streambuf &MyBuffer);
+       //std::string buff_to_string (boost::asio::streambuf &MyBuffer);
 
     private:
+
+        //pointer to buffer
         std::shared_ptr<std::stringstream> threadBuff_ptr;
+
+        //shared mutex
         std::shared_ptr<std::mutex> mtx_ptr;
 
         //declaring handle methods pointers to change the handlers

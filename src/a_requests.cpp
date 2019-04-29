@@ -30,8 +30,7 @@ client::client(boost::asio::io_service& io_service,
     }
     else
     {
-      reply2 = ("Handshake failed: " + error.message());
-      std::cout << "Handshake failed: " << error.message() << "\n";
+       handle_error (error);
     }
   }
 
@@ -49,8 +48,7 @@ client::client(boost::asio::io_service& io_service,
     }
     else
     {
-      reply2 = ("Write failed: " + error.message());
-      std::cout << "Write failed: " << error.message() << "\n";
+       handle_error (error);
     }
   }
 
@@ -136,8 +134,7 @@ void client::handle_read(const boost::system::error_code& error,
     //if previous reading has ended with an error code
     else
     {
-      reply2 = ("Read failed: " + error.message());
-      std::cout << "Read failed: " << error.message() << "\n";
+       handle_error (error);
     }
   }
 
@@ -206,8 +203,7 @@ void client::handle_read_chunk(const boost::system::error_code& error)
     //if previous reading has ended with an error code
     else
     {
-      reply2 = "Read2 failed: " + error.message()+ "\r\n" + reply2;
-      std::cout << "Read failed: " << error.message() << "\n";
+       handle_error (error);
     }
 
   }
@@ -222,8 +218,7 @@ void client::handle_read_content(const boost::system::error_code& error)
     //if previous reading has ended with an error code
     else
     {
-      reply2 = ("Read3 failed: " + error.message()+ "\r\n" + first_part + error_mess_);
-      std::cout << "Read failed: " << error.message() << "\n";
+       handle_error (error);
     }
 
 
@@ -234,6 +229,14 @@ std::string client::buff_to_string (boost::asio::streambuf &MyBuffer)
       std::ostringstream BufOutStream;
       BufOutStream << &MyBuffer;
       return BufOutStream.str();
+}
+
+void client::handle_error (const boost::system::error_code& error)
+
+{
+
+      reply2 = "\r\nError: " + error.message() + "\r\n";
+      std::cout << reply2;
 }
 
 
